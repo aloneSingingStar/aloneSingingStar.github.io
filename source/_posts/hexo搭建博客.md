@@ -175,3 +175,16 @@ no changes added to commit
 2.在/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/themes/yilia/_config.yml文件中，加入：
 excerpt_link: more
 ```
+
+## 16 给文章设置tag,用于搜索
+```
+每篇生成的博客都有如下格式：可添加多个tag
+---
+title: hexo搭建博客
+date: 2017-09-10 13:48:42
+tags:
+- tag1
+- tag2
+- tag3
+---
+```
