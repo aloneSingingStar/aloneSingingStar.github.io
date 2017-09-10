@@ -88,7 +88,7 @@ hexo deploy
 
 ## 11.配置主题
 ```
-主题网址：![主题网址](https://hexo.io/themes/)
+主题网址：[主题网址](https://hexo.io/themes/)
 我使用的是yilia,步骤如下：
 1.使用ssh方式克隆项目到themes目录下的yilia目录
 git clone git@github.com:litten/hexo-theme-yilia.git themes/yilia
@@ -97,7 +97,7 @@ theme:yilia
 3.具体样式可以修改yilia目录下的_config.yml文件
 ```
 
-## 12.配置百度统计
+## 12.配置百度统计（只能后台统计，无法前台展示）
 ```
 注册百度统计站长版
 注册成功后，会得到一段代码，其中有一段是：hm.src = "https://hm.baidu.com/hm.js?这里是你的唯一code;
@@ -105,8 +105,19 @@ theme:yilia
 # Miscellaneous
 baidu_analytics: '填写你的code'
 google_analytics: false
+
+[百度统计网址](https://tongji.baidu.com)
 ```
-## 13.提交hexo分支上的修改
+
+## 13.配置不蒜子，在网页显示访问量
+```
+我修改的是/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/themes/yilia/layout/_partial/footer.ejs文件
+其中不蒜子我没有下载到本地，是直接引用的<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+参考的是这个人的配置（https://github.com/sssvip/blog-data/blob/master/themes/yilia/layout/_partial/footer.ejs）
+```
+
+## 14.提交hexo分支上的修改
 ```
 1.git status 查看代码修改
 
@@ -129,8 +140,24 @@ Untracked files:
 2.可以看到，有2个modified,一个new file,还有未被加入本地仓库的文件夹，这3个文件夹是我下载的主题，其中我配置了一些私密信息，比如，百度统计的唯一code、支付宝、微信打赏图片等，我不想上传，如果你想上传，可以使用:[git add .]将所有这个文件夹下的文件提交到本地仓库
 
 3. git commit -m "描述"
+如果这个文件已经提交到了远程仓库，本地做了修改，想再提交到远程仓库，如果只执行 git commit -m "描述" 是不行的，会报如下问题：
+
+➜ /Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io git:(hexo) ✗ >git commit -m "配置说明修改"
+On branch hexo
+Changes not staged for commit:
+        modified:   "source/_posts/hexo\346\220\255\345\273\272\345\215\232\345\256\242.md"
+
+Untracked files:
+        themes/hexo-theme-spfk/
+        themes/next/
+        themes/yilia/
+
+no changes added to commit
+
+说明已跟踪文件的内容发生了变化，但还没有放到暂存区。要暂存这次更新，需要运行 git add 命令，然后再提交
 
 4. git push origin hexo
 
 5. git pull origin hexo
 ```
+
