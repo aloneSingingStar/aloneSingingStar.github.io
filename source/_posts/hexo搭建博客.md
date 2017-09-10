@@ -106,3 +106,31 @@ theme:yilia
 baidu_analytics: '填写你的code'
 google_analytics: false
 ```
+## 13.提交hexo分支上的修改
+```
+1.git status 查看代码修改
+
+➜ /Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io git:(hexo) ✗ >git status
+On branch hexo
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   _config.yml
+        modified:   package.json
+        new file:   "source/_posts/hexo\346\220\255\345\273\272\345\215\232\345\256\242.md"
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        themes/hexo-theme-spfk/
+        themes/next/
+        themes/yilia/
+
+2.可以看到，有2个modified,一个new file,还有未被加入本地仓库的文件夹，这3个文件夹是我下载的主题，其中我配置了一些私密信息，比如，百度统计的唯一code、支付宝、微信打赏图片等，我不想上传，如果你想上传，可以使用:[git add .]将所有这个文件夹下的文件提交到本地仓库
+
+3. git commit -m "描述"
+
+4. git push origin hexo
+
+5. git pull origin hexo
+```
