@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
+title: aloneSiningStar的博客
+subtitle: 砥砺前行
+description: 暂无
+author: aloneSingingStar
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://alonesingingstar.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -71,8 +71,25 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+#先执行 npm install hexo-generator-sitemap，然后填写sitemap
+# npm install hexo-generator-feed,然后填写feed
+# npm install hexo-generator-baidu-sitemap,然后填写baidusitemap
+
+# plugins:
+# - hexo-generator-sitemap
+# - hexo-generator-feed
+# - hexo-generator-baidu-sitemap
+# sitemap:
+#     path: sitemap.xml
+# baidusitemap:
+#     path: baidusitemap.xm
+# feed:
+#     type: atom
+#     path: atom.xml
+#     limit: 100
+
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -80,3 +97,23 @@ deploy:
   type: git
   repository: git@github.com:aloneSingingStar/aloneSingingStar.github.io.git
   branch: master
+
+# yilia主题：所有文章，先要在aloneSingingStar.github.io 目录下执行 npm i hexo-generator-json-content --save
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true

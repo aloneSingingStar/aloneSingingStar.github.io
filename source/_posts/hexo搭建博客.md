@@ -1,0 +1,108 @@
+---
+title: hexo搭建博客
+date: 2017-09-10 13:48:42
+tags:
+---
+
+## 1.在github上新建项目：
+```
+项目名称：github用户名称.github.io
+example: aloneSingingStar.github.io
+注意:最好创建空项目，不带一个文件
+```
+
+## 2.本地新建目录
+```
+随意创建，我的是aloneSingingStar.github.io
+```
+
+## 3.进入aloneSingingStar.github.io目录，初始化hexo
+```
+hexo init
+```
+
+## 4.安装依赖
+```
+npm install
+```
+
+## 5.安装博客部署插件
+```
+npm install hexo-deployer-git --save
+```
+
+## 6.配置_comfig.xml，设置部署分支为master
+```
+deploy:
+  type: git
+  repository: git@github.com:aloneSingingStar/aloneSingingStar.github.io.git
+  branch: master
+```
+
+## 7.将项目添加到github
+```
+git init
+
+git add .
+
+git commit -m ‘初始化hexo’
+
+git remote add origin git@github.com:aloneSingingStar/aloneSingingStar.github.io.git
+
+git fetch
+
+git push -u origin master -f (必须加上-f,而且执行这句后，之前在github上的原有文件会丢失)
+在github上创建项目时，里面有一个readme.md文件，而本地项目git init时，里面没有这个文件，当使用（git push -u origin master）把本地文件提交上，就会有如下问题：
+To github.com:aloneSingingStar/aloneSingingStar.github.io.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:aloneSingingStar/aloneSingingStar.github.io.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+## 8.在本地和远程创建hexo分支,并且本地切换到hexo分支,并拉取代码
+```
+git checkout -b hexo
+git push origin hexo
+git pull origin hexo(从hexo分支拉取代码，git pull无效果，可以git branch --set-upstream-to=origin/hexo(跟踪hexo的流)，并且git branch --unset-upstream master(取消对master的跟踪)，这样的话，就可以直接执行git pull、git push直接提交代码到hexo分支)
+```
+
+## 9.启动本地服务器测试
+```
+hexo server
+访问 http://localhost:4000/ 预览效果
+```
+
+## 10.预览没有问题后，执行如下操作部署到github
+```
+hexo clean
+
+hexo generate
+
+hexo deploy
+
+访问http://aloneSingingStar.github.io
+```
+
+## 11.配置主题
+```
+主题网址：![主题网址](https://hexo.io/themes/)
+我使用的是yilia,步骤如下：
+1.使用ssh方式克隆项目到themes目录下的yilia目录
+git clone git@github.com:litten/hexo-theme-yilia.git themes/yilia
+2.修改aloneSingingStar.github.io目录下的_config.yml中的主题
+theme:yilia
+3.具体样式可以修改yilia目录下的_config.yml文件
+```
+
+## 12.配置百度统计
+```
+注册百度统计站长版
+注册成功后，会得到一段代码，其中有一段是：hm.src = "https://hm.baidu.com/hm.js?这里是你的唯一code;
+把code填写到yilia主题目录下的_config.yml中的
+# Miscellaneous
+baidu_analytics: '填写你的code'
+google_analytics: false
+```
