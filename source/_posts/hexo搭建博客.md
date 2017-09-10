@@ -20,6 +20,7 @@ example: aloneSingingStar.github.io
 ```
 hexo init
 ```
+<!-- more -->
 
 ## 4.安装依赖
 ```
@@ -156,8 +157,20 @@ no changes added to commit
 
 说明已跟踪文件的内容发生了变化，但还没有放到暂存区。要暂存这次更新，需要运行 git add 命令，然后再提交
 
-4. git push origin hexo
+4.如果修改了很多个文件，那么一个个的去[git add 被修改的文件],然后再提交，会很麻烦，所以可以先使用[git status],查看所有未提交的文件，然后把不想提交的文件或者文件夹在[.gitignore]文件中过滤掉，这样的话，就可以直接使用[git add .]将所有未提交的提交到本地仓库
 
-5. git pull origin hexo
+5. git push origin hexo
+
+6. git pull origin hexo
 ```
 
+## 15.在博客的md文件中，加入截断标签
+
+```
+如果没有加，一篇博客有多长，就展示多长，我们想要的效果是，在主页每篇博客只显示一部分，点击more后再进入详细页面
+
+1.在需要截断的地方加入如下标签：<!-- more -->
+
+2.在/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/themes/yilia/_config.yml文件中，加入：
+excerpt_link: more
+```
