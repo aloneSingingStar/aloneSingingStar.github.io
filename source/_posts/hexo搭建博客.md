@@ -2,6 +2,7 @@
 title: hexo搭建博客
 date: 2017-09-10 13:48:42
 tags:
+- hexo
 ---
 
 ## 1.在github上新建项目：
