@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://alonesingingstar.github.io/2017/09/10/hexo搭建博客/index.html">
 <meta property="og:site_name" content="aloneSiningStar的博客">
 <meta property="og:description" content="1.在github上新建项目：123项目名称：github用户名称.github.ioexample: aloneSingingStar.github.io注意:最好创建空项目，不带一个文件 2.本地新建目录1随意创建，我的是aloneSingingStar.github.io 3.进入aloneSingingStar.github.io目录，初始化hexo1hexo init 4.安装依赖1np">
-<meta property="og:updated_time" content="2017-09-10T07:10:31.000Z">
+<meta property="og:updated_time" content="2017-09-10T07:36:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建博客">
 <meta name="twitter:description" content="1.在github上新建项目：123项目名称：github用户名称.github.ioexample: aloneSingingStar.github.io注意:最好创建空项目，不带一个文件 2.本地新建目录1随意创建，我的是aloneSingingStar.github.io 3.进入aloneSingingStar.github.io目录，初始化hexo1hexo init 4.安装依赖1np">
@@ -189,9 +189,10 @@ var _hmt = _hmt || [];
 <h2 id="8-在本地和远程创建hexo分支-并且本地切换到hexo分支-并拉取代码"><a href="#8-在本地和远程创建hexo分支-并且本地切换到hexo分支-并拉取代码" class="headerlink" title="8.在本地和远程创建hexo分支,并且本地切换到hexo分支,并拉取代码"></a>8.在本地和远程创建hexo分支,并且本地切换到hexo分支,并拉取代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git checkout -b hexo</div><div class="line">git push origin hexo</div><div class="line">git pull origin hexo(从hexo分支拉取代码，git pull无效果，可以git branch --set-upstream-to=origin/hexo(跟踪hexo的流)，并且git branch --unset-upstream master(取消对master的跟踪)，这样的话，就可以直接执行git pull、git push直接提交代码到hexo分支)</div></pre></td></tr></table></figure>
 <h2 id="9-启动本地服务器测试"><a href="#9-启动本地服务器测试" class="headerlink" title="9.启动本地服务器测试"></a>9.启动本地服务器测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line">访问 http://localhost:4000/ 预览效果</div></pre></td></tr></table></figure>
 <h2 id="10-预览没有问题后，执行如下操作部署到github"><a href="#10-预览没有问题后，执行如下操作部署到github" class="headerlink" title="10.预览没有问题后，执行如下操作部署到github"></a>10.预览没有问题后，执行如下操作部署到github</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line"></div><div class="line">hexo generate</div><div class="line"></div><div class="line">hexo deploy</div><div class="line"></div><div class="line">访问http://aloneSingingStar.github.io</div></pre></td></tr></table></figure>
-<h2 id="11-配置主题"><a href="#11-配置主题" class="headerlink" title="11.配置主题"></a>11.配置主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">主题网址：![主题网址](https://hexo.io/themes/)</div><div class="line">我使用的是yilia,步骤如下：</div><div class="line">1.使用ssh方式克隆项目到themes目录下的yilia目录</div><div class="line">git clone git@github.com:litten/hexo-theme-yilia.git themes/yilia</div><div class="line">2.修改aloneSingingStar.github.io目录下的_config.yml中的主题</div><div class="line">theme:yilia</div><div class="line">3.具体样式可以修改yilia目录下的_config.yml文件</div></pre></td></tr></table></figure>
-<h2 id="12-配置百度统计"><a href="#12-配置百度统计" class="headerlink" title="12.配置百度统计"></a>12.配置百度统计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">注册百度统计站长版</div><div class="line">注册成功后，会得到一段代码，其中有一段是：hm.src = &quot;https://hm.baidu.com/hm.js?这里是你的唯一code;</div><div class="line">把code填写到yilia主题目录下的_config.yml中的</div><div class="line"># Miscellaneous</div><div class="line">baidu_analytics: &apos;填写你的code&apos;</div><div class="line">google_analytics: false</div></pre></td></tr></table></figure>
+<h2 id="11-配置主题"><a href="#11-配置主题" class="headerlink" title="11.配置主题"></a>11.配置主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">主题网址：[主题网址](https://hexo.io/themes/)</div><div class="line">我使用的是yilia,步骤如下：</div><div class="line">1.使用ssh方式克隆项目到themes目录下的yilia目录</div><div class="line">git clone git@github.com:litten/hexo-theme-yilia.git themes/yilia</div><div class="line">2.修改aloneSingingStar.github.io目录下的_config.yml中的主题</div><div class="line">theme:yilia</div><div class="line">3.具体样式可以修改yilia目录下的_config.yml文件</div></pre></td></tr></table></figure>
+<h2 id="12-配置百度统计"><a href="#12-配置百度统计" class="headerlink" title="12.配置百度统计"></a>12.配置百度统计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">注册百度统计站长版</div><div class="line">注册成功后，会得到一段代码，其中有一段是：hm.src = &quot;https://hm.baidu.com/hm.js?这里是你的唯一code;</div><div class="line">把code填写到yilia主题目录下的_config.yml中的</div><div class="line"># Miscellaneous</div><div class="line">baidu_analytics: &apos;填写你的code&apos;</div><div class="line">google_analytics: false</div><div class="line"></div><div class="line">[百度统计网址](https://tongji.baidu.com)</div></pre></td></tr></table></figure>
 <h2 id="13-提交hexo分支上的修改"><a href="#13-提交hexo分支上的修改" class="headerlink" title="13.提交hexo分支上的修改"></a>13.提交hexo分支上的修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">1.git status 查看代码修改</div><div class="line"></div><div class="line">➜ /Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io git:(hexo) ✗ &gt;git status</div><div class="line">On branch hexo</div><div class="line">Changes to be committed:</div><div class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</div><div class="line"></div><div class="line">        modified:   _config.yml</div><div class="line">        modified:   package.json</div><div class="line">        new file:   &quot;source/_posts/hexo\346\220\255\345\273\272\345\215\232\345\256\242.md&quot;</div><div class="line"></div><div class="line">Untracked files:</div><div class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</div><div class="line"></div><div class="line">        themes/hexo-theme-spfk/</div><div class="line">        themes/next/</div><div class="line">        themes/yilia/</div><div class="line"></div><div class="line">2.可以看到，有2个modified,一个new file,还有未被加入本地仓库的文件夹，这3个文件夹是我下载的主题，其中我配置了一些私密信息，比如，百度统计的唯一code、支付宝、微信打赏图片等，我不想上传，如果你想上传，可以使用:[git add .]将所有这个文件夹下的文件提交到本地仓库</div><div class="line"></div><div class="line">3. git commit -m &quot;描述&quot;</div><div class="line">如果这个文件已经提交到了远程仓库，本地做了修改，想再提交到远程仓库，如果只执行 git commit -m &quot;描述&quot; 是不行的，会报如下问题：</div><div class="line"></div><div class="line">➜ /Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io git:(hexo) ✗ &gt;git commit -m &quot;配置说明修改&quot;</div><div class="line">On branch hexo</div><div class="line">Changes not staged for commit:</div><div class="line">        modified:   &quot;source/_posts/hexo\346\220\255\345\273\272\345\215\232\345\256\242.md&quot;</div><div class="line"></div><div class="line">Untracked files:</div><div class="line">        themes/hexo-theme-spfk/</div><div class="line">        themes/next/</div><div class="line">        themes/yilia/</div><div class="line"></div><div class="line">no changes added to commit</div><div class="line"></div><div class="line">说明已跟踪文件的内容发生了变化，但还没有放到暂存区。要暂存这次更新，需要运行 git add 命令，然后再提交</div><div class="line"></div><div class="line">4. git push origin hexo</div><div class="line"></div><div class="line">5. git pull origin hexo</div></pre></td></tr></table></figure>
+
       
 
       
@@ -348,7 +349,7 @@ var _hmt = _hmt || [];
           </div>
         </div>
       </div>
-      <footer id="footer">
+      <!-- <footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -359,7 +360,34 @@ var _hmt = _hmt || [];
       	</div>
     </div>
   </div>
+</footer> -->
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 aloneSingingStar
+    	</div>
+      	<div class="footer-right">
+      		总访问<span id="busuanzi_value_site_pv"></span>次
+			访客<span id="busuanzi_value_site_uv"></span>人次
+			<!--本页<span id="busuanzi_value_page_pv"></span>次-->
+			<br>
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+  <script async src="/js/busuanzi.pure.mini.js"></script>
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?c59b6fe034f1dfae11baa5bc574e2062";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+  </script>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
