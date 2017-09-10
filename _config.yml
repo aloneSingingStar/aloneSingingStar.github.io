@@ -79,14 +79,14 @@ pagination_dir: page
 # - hexo-generator-sitemap
 # - hexo-generator-feed
 # - hexo-generator-baidu-sitemap
-# sitemap:
-#     path: sitemap.xml
-# baidusitemap:
-#     path: baidusitemap.xm
-# feed:
-#     type: atom
-#     path: atom.xml
-#     limit: 100
+sitemap:
+    path: sitemap.xml
+baidusitemap:
+    path: baidusitemap.xm
+feed:
+    type: atom
+    path: atom.xml
+    limit: 100
 
 ## Themes: https://hexo.io/themes/
 theme: yilia
