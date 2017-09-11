@@ -188,3 +188,11 @@ tags:
 - tag3
 ---
 ```
+## 17 绑定域名
+```
+1.购买域名，我购买的是阿里云的
+2.域名解析：进入阿里云控制台，点击添加解析，【记录类型：A】【主机记录：@】【解析线路：默认】【记录值：ip(ping alonesingingstar.github.io得到的IP）】，然后保存即可
+注：记录类型:CNAME , 记录值:alonesingingstar.github.io  是不行的，因为alonesingingstar.github.io不是顶级域名，没有备案的
+3.在alonesingingstar.github.io/source目录下新建CNAME文件，里面内容是你买的域名
+4.重新部署，然后用你的域名访问网站，我的是：http://alonesingingstar.site
+```
