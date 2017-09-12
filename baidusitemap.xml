@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://alonesingingstar.site/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
-    <lastmod>2017-09-12T10:45:34.000Z</lastmod>
+    <lastmod>2017-09-12T12:32:13.000Z</lastmod>
     <data>
         <display>
         <title>hexo搭建博客</title>
@@ -15,24 +15,32 @@
          
          
            
+             
+              <breadCrumb title="hexo" url="http://alonesingingstar.site/categories/hexo/"/>
+          
         </display>
     </data>
     </url>
 
     
-    
   <url>
     <loc>http://alonesingingstar.site/hello-world.html</loc>
-    <lastmod>2017-09-10T09:56:56.000Z</lastmod>
+    <lastmod>2017-09-12T12:31:51.000Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
         <pubTime>2017-09-09T09:11:24.000Z</pubTime>
         
+        <tag>hello world</tag>
+         
          
            
+             
+              <breadCrumb title="default" url="http://alonesingingstar.site/categories/default/"/>
+          
         </display>
     </data>
     </url>
 
+    
 </urlset>
