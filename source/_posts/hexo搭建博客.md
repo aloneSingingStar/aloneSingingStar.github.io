@@ -196,3 +196,57 @@ tags:
 3.在alonesingingstar.github.io/source目录下新建CNAME文件，里面内容是你买的域名
 4.重新部署，然后用你的域名访问网站，我的是：http://alonesingingstar.site
 ```
+
+## 18 网站SEO优化
+```
+方式一：
+http://zhanzhang.baidu.com/college/articleinfo?id=1003
+
+1.进入百度站长平台：http://zhanzhang.baidu.com/dashboard/index
+2.点击添加站点，输入你购买的域名
+3.勾选站点属性
+4.验证网站，我选择的是【CNAME验证】,具体做法：在购买域名的网站（我的是阿里云）进行域名解析：点击添加解析，【记录类型：CNAME】【主机记录：C3bHznfyDD(这个值我乱写的，真实值按百度站长平台提供的来写)】【解析线路：默认】【记录值：zz.baidu.com(必须是这个，之前我写成了我自己的域名)】，然后保存即可
+
+CNAME验证
+请将 C3bHznfyDD.alonesingingstar.site 使用CNAME解析到zz.baidu.com
+完成操作后请点击“完成验证”按钮。
+为保持验证通过的状态,成功验证后请不要删除该DNS记录
+
+结果：不到一分钟前alonesingingstar.site使用CNAME验证验证失败，原因：没有找到对应的DNS CNAME记录。
+问题分析&解决办法： 请检查dns域名指向是否正确，dns生效一般需要几分钟到1天左右，请耐心等待。
+
+等待一段时间后：
+
+alonesingingstar.site验证成功！
+该网站为主站，您可以批量添加子站并查看数据，
+无需再次验证。帮助
+
+5.打开百度，搜索 【site:你的域名】，看能不能搜索到
+
+
+方式二：
+进入百度统计的管理页面：https://tongji.baidu.com
+点击新增网站，【网站域名：你购买的域名】,其他随便填，然后你点击获取代码,找到如下代码：hm.src = "https://hm.baidu.com/hm.js?这里是你的唯一code;然后可参照上面 12.配置百度统计（只能后台统计，无法前台展示）的配置
+
+结果：一直没有统计数据
+
+可能原因：可能要等一段时间，待验证
+```
+
+## 19 生成网站地图
+```
+1.安装插件：npm i hexo-generator-sitemap hexo-generator-baidu-sitemap -S
+2.配置根目录下的_config.yml
+
+sitemap:
+    path: sitemap.xml
+baidusitemap:
+    path: baidusitemap.xml
+
+url: http://alonesingingstar.site/(你的网址)
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+3.部署，部署后会生成sitemap.xml、baidusitemap.xml文件（这两者的区别在于 baidusitemap.xml 是百度搜索引擎的专用文件,另一个是通用）
+```

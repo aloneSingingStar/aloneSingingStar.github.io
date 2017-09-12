@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://alonesingingstar.github.io/
+url: http://alonesingingstar.site/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -82,7 +82,7 @@ pagination_dir: page
 sitemap:
     path: sitemap.xml
 baidusitemap:
-    path: baidusitemap.xm
+    path: baidusitemap.xml
 feed:
     type: atom
     path: atom.xml
