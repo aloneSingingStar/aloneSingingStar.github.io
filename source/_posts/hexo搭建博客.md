@@ -3,6 +3,8 @@ title: hexo搭建博客
 date: 2017-09-10 13:48:42
 tags:
 - hexo
+keywords: hexo,yilia,SEO,github,sitemap
+description: hexo,github搭建个人博客,使用yilia主题,SEO优化
 ---
 
 ## 1.在github上新建项目：
@@ -311,3 +313,34 @@ INFO  Deploy done: baidu_url_submitter
 继续
 
 使用谷歌搜索：site:alonesingingstar.site，暂时还搜索不到，先等吧
+
+## 22.提升排名
+博客根目录 _config.yml 文件进行如下修改，关键字英文逗号隔开：
+```
+# Site
+title: 网站名称
+description: 网站描述
+author: 作者姓名
+subtitle: 作者简介
+language: zh-CN
+timezone:
+keywords: Web,HTML # 博客关键字
+```
+
+文章中加入关键字
+```
+---
+title: ###
+date: ###
+categories: ###
+tags: ###
+keywords: ###
+description: ###
+---
+```
+
+文章路径简化
+```
+Hexo 默认的文章链接形式为 domain/year/month/day/postname，默认就是一个四级 url，并且可能造成 url 过长，对搜索引擎是十分不友好的。我们可以改成 domain/postname 的形式。编辑站点 _config.yml 文件，修改其中的 permalink 字段改为:
+permalink: :title.html
+```

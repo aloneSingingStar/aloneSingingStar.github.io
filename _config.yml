@@ -5,16 +5,18 @@
 # Site
 title: aloneSiningStar的博客
 subtitle: 砥砺前行
-description: 暂无
+description: android、java技术
 author: aloneSingingStar
-language:
+language: zh-CN
 timezone:
+keywords: android,java # 博客关键字
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://alonesingingstar.site/
 root: /
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/ 这种结构不利于SEO
+permalink: :title.html
 permalink_defaults:
 
 # Directory
