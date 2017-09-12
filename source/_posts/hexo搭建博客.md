@@ -5,6 +5,7 @@ tags:
 - hexo
 keywords: hexo,yilia,SEO,github,sitemap
 description: hexo,github搭建个人博客,使用yilia主题,SEO优化
+categories: hexo
 ---
 
 ## 1.在github上新建项目：
