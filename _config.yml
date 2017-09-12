@@ -94,9 +94,17 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repository: git@github.com:aloneSingingStar/aloneSingingStar.github.io.git
   branch: master
+- type: baidu_url_submitter
+#主动提交链接到百度
+baidu_url_submit:
+  count: 10 # 提交最新的链接数
+  host: alonesingingstar.site # 在百度站长平台中注册的域名,虽然官方推荐要带有 www, 但可以不带.
+  token: hfZOFI0MdTapNQJe # 你的秘钥,每个人都不一样,在百度站长平台/网页抓取/链接提交/自动提交/主动推送 下面可以找到
+  path: baidu_urls.txt # 文本文档的地址,新链接会保存在此文本文档里
+
 
 # yilia主题：所有文章，先要在aloneSingingStar.github.io 目录下执行 npm i hexo-generator-json-content --save
 jsonContent:

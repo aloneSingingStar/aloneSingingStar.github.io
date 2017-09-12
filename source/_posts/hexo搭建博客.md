@@ -250,3 +250,64 @@ permalink_defaults:
 
 3.部署，部署后会生成sitemap.xml、baidusitemap.xml文件（这两者的区别在于 baidusitemap.xml 是百度搜索引擎的专用文件,另一个是通用）
 ```
+
+## 20 向百度提交链接(在百度站长平台设置)
+http://zhanzhang.baidu.com/linksubmit/index
+1、主动推送：最为快速的提交方式，推荐您将站点当天新产出链接立即通过此方式推送给百度，以保证新链接可以及时被百度收录。
+2、自动推送：最为便捷的提交方式，请将自动推送的JS代码部署在站点的每一个页面源代码中，部署代码的页面在每次被浏览时，链接会被自动推送给百度。可以与主动推送配合使用。
+3、sitemap：您可以定期将网站链接放到sitemap中，然后将sitemap提交给百度。百度会周期性的抓取检查您提交的sitemap，对其中的链接进行处理，但收录速度慢于主动推送。
+4、手动提交：一次性提交链接给百度，可以使用此种方式。
+
+具体配置方式可以参考百度站长平台/网页抓取/链接提交 中
+
+上面19介绍了sitemap,下面介绍下主动推送
+```
+1.安装插件:npm i hexo-baidu-url-submit -S
+2.根目录下配置_config.yml
+deploy:
+- type: git
+  repository: git@github.com:aloneSingingStar/aloneSingingStar.github.io.git
+  branch: master
+- type: baidu_url_submitter
+#主动提交链接到百度
+baidu_url_submit:
+  count: 10 # 提交最新的链接数
+  host: alonesingingstar.site # 在百度站长平台中注册的域名,虽然官方推荐要带有 www, 但可以不带.
+  token: 密钥值 # 你的秘钥,每个人都不一样,在百度站长平台/网页抓取/链接提交/自动提交/主动推送 下面可以找到
+  path: baidu_urls.txt # 文本文档的地址,新链接会保存在此文本文档里
+
+3.重新部署，新的链接就会被推送上去
+部署成功可以看到控制台有如下信息：
+INFO  Deploying: baidu_url_submitter
+INFO  Submitting urls
+http://alonesingingstar.site/2017/09/10/hexo搭建博客/
+http://alonesingingstar.site/2017/09/09/hello-world/
+{"remain":4999998,"success":2}
+INFO  Deploy done: baidu_url_submitter
+
+到百度站长/站点管理/网页抓取/链接提交 中并没有看到提交的链接，需要等一段时间（可能要一两天），然后使用site:你的域名，才能搜索到
+具体原因如下：http://tengj.top/2016/03/14/baidunoshouluresson/
+
+9/12 下午16:29，使用百度搜索：site:alonesingingstar.site，已经可以搜索到了
+```
+
+## 21 向谷歌提交链接
+
+1. 下载此 HTML 验证文件。 [google2f21809f4cc6b2ea.html]
+2. 将该文件上传到 http://alonesingingstar.site/
+3. 通过在浏览器中访问 http://alonesingingstar.site/google2f21809f4cc6b2ea.html 确认上传成功。
+4. 点击下面的“验证”。
+
+具体步骤：进入谷歌站长页面（https://www.google.com/webmasters/，用你的谷歌账户登录，然后点击添加属性，输入你的网址）
+1.下载HTML验证文件（在内容中加入layout: false,网上说hexo会编译这个文件，设置这个不让它编译）
+2.将该文件放到/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/source目录下。
+3.重新部署网站
+4.通过在浏览器中访问 http://alonesingingstar.site/google2f21809f4cc6b2ea.html 确认上传成功。
+6.点击验证
+7.进入谷歌的Search Console，点击站点地图/添加站点地图,比如我的是http://alonesingingstar.site/sitemap.xml,添加后就能抓取到
+结果：您无权使用此资源。请验证此资源，或请资源所有者将您添加为用户，要等一段时间
+等一段时间后：
+恭喜！您已成功验证您对 http://alonesingingstar.site/ 网站的所有权。
+继续
+
+使用谷歌搜索：site:alonesingingstar.site，暂时还搜索不到，先等吧
