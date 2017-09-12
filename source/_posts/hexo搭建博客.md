@@ -314,6 +314,8 @@ INFO  Deploy done: baidu_url_submitter
 
 使用谷歌搜索：site:alonesingingstar.site，暂时还搜索不到，先等吧
 
+进入站长页面的Search Console，点击Google抓取工具，点击抓取，一定要请求将网址和链接页编入索引，然后使用site:alonesingingstar.site搜索，就能搜索到了
+
 ## 22.提升排名
 博客根目录 _config.yml 文件进行如下修改，关键字英文逗号隔开：
 ```
@@ -344,3 +346,10 @@ description: ###
 Hexo 默认的文章链接形式为 domain/year/month/day/postname，默认就是一个四级 url，并且可能造成 url 过长，对搜索引擎是十分不友好的。我们可以改成 domain/postname 的形式。编辑站点 _config.yml 文件，修改其中的 permalink 字段改为:
 permalink: :title.html
 ```
+
+## 23 加入友言评论系统
+1.注册账号：http://www.uyan.cc/
+2.注册成功后，可以看到一段代码，复制下来，在/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/themes/yilia/layout/_partial/post下新建uyan.ejs文件,将内容粘贴进去
+3.找到/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/themes/yilia/layout/_partial/article.ejs文件，找到【<% if (!index && post.comments){ %>】这行代码,在后面加入：【<% if (theme.uyan){ %><%- partial('post/uyan', {key: post.slug,title: post.title,url: config.url+url_for(post.path)}) %><% } %> 】
+4.进入后台管理，可以看到你的用户ID，复制这个ID，然后在/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/themes/yilia/_config.yml中加入：uyan: '你的ID'
+5.重新部署
