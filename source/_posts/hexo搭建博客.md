@@ -380,3 +380,53 @@ permalink: :title.html
 * 3.找到/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/themes/yilia/layout/_partial/article.ejs文件，找到【<% if (!index && post.comments){ %>】这行代码,在后面加入：【<% if (theme.uyan){ %><%- partial('post/uyan', {key: post.slug,title: post.title,url: config.url+url_for(post.path)}) %><% } %> 】
 * 4.进入后台管理，可以看到你的用户ID，复制这个ID，然后在/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/themes/yilia/_config.yml中加入：uyan: '你的ID'
 * 5.重新部署
+
+### 24 博客中引用图片
+* 1._config.xml中开启文章资源文件夹
+```
+post_asset_folder: true
+
+```
+* 2.每次执行 hexo new "文章名字" 生成md文件时，会在同级生成"文章名字"文件夹,将资源放入该文件夹即可
+
+* 3.引用方式
+```
+{% asset_img 资源名称 描述 %}
+
+比如：{% asset_img example.jpg This is an example image %}
+```
+
+* 4.修改node_modules/hexo/lib/models/post_asset.js文件
+将如下代码进行修改
+```
+ PostAsset.virtual('path').get(function() {
+     var Post = ctx.model('Post');
+     var post = Post.findById(this.post);
+     if (!post) return;
+
+     // PostAsset.path is file path relative to `public_dir`
+     // no need to urlescape, #1562
+     return pathFn.join(post.path, this.slug);
+   });
+```
+改为：
+```
+PostAsset.virtual('path').get(function() {
+    var Post = ctx.model('Post');
+    var post = Post.findById(this.post);
+    if (!post) return;
+    // PostAsset.path is file path relative to `public_dir`
+    // no need to urlescape, #1562
+      //如果生成的文章路径是以html结尾的, 如:  2016/10/13/byte-order.html,
+      // 则对应的资源路径应该是: 2016/10/13/byte-order + this.slug
+      var reg = new RegExp("html" + "$");
+      if(reg.test(post.path)) {
+    var assetPath = post.path.substr(0, post.path.lastIndexOf("."));
+    return pathFn.join(assetPath, this.slug);
+      }
+      return pathFn.join(post.path, this.slug);
+  });
+```
+如果不改，执行hexo generate时会报错：Error: ENOTDIR: not a directory
+
+参考(https://leokongwq.github.io/2016/10/14/hexo-post-asset-folder-html.html)
