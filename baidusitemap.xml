@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://alonesingingstar.site/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
-    <lastmod>2017-09-27T02:57:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo搭建博客</title>
-        <pubTime>2017-09-10T05:48:42.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://alonesingingstar.site/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://alonesingingstar.site/Tigase%E5%BC%80%E5%8F%91-Tigase%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA.html</loc>
-    <lastmod>2017-09-27T02:49:11.000Z</lastmod>
+    <lastmod>2017-09-27T04:24:11.000Z</lastmod>
     <data>
         <display>
         <title>Tigase开发--Tigase服务器搭建</title>
@@ -41,6 +21,26 @@
            
              
               <breadCrumb title="tigase" url="http://alonesingingstar.site/categories/tigase/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alonesingingstar.site/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
+    <lastmod>2017-09-27T02:57:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>hexo搭建博客</title>
+        <pubTime>2017-09-10T05:48:42.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://alonesingingstar.site/categories/hexo/"/>
           
         </display>
     </data>
