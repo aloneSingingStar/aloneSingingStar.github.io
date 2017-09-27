@@ -28,7 +28,7 @@ categories: tigase
 
 **注意点1：** Basic Server Configuration（基本服务配置）
 
-{% asset_img serverConfiguration.gif Server Configuration %}
+![ServerConfguration](http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/serverConfiguration.gif)
 
 * Your XMPP(Jabber) domains:自定义xmpp域名，比如veloci.tigase.org
 * Server administrators:管理员账号（在数据库注册的第一个用户），格式为：名称@自定义的域名，比如admin@veloci.tigase.org
@@ -36,7 +36,7 @@ categories: tigase
 
 **注意点2：** Tigase数据库安装
 
-{% asset_img tigasedb.jpg Server Configuration %}
+![tigasedb](http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/tigasedb.jpg)
 
 成功后，会在本地mysql数据库生成tigasedb数据库，其中可以在tig_users表中看到之前注册的Server administrators:管理员账号(在这个数据库中存在的用户，可以用来登录)
 

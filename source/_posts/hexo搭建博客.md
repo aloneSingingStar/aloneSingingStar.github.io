@@ -394,8 +394,17 @@ post_asset_folder: true
 {% asset_img 资源名称 描述 %}
 
 比如：{% asset_img example.jpg This is an example image %}
-```
 
+上面这种方式在网页端访问没有问题，但是手机RSS订阅会有问题，上面那种写法，atom.xml中显示为
+<img src="/Tigase开发-Tigase服务器搭建/serverConfiguration.gif">,根本无法访问该链接，
+可以使用如下方式访问：
+
+![ServerConfguration](http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/serverConfiguration.gif)
+
+或者：
+
+{% img http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/serverConfiguration.gif %}
+```
 * 4.修改node_modules/hexo/lib/models/post_asset.js文件
 将如下代码进行修改
 ```
