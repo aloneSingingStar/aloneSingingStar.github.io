@@ -17,10 +17,8 @@
 <meta property="og:description" content="tigase,tigase服务器,xmpp">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/serverConfiguration.gif">
-<meta property="og:image" content="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/serverConfiguration.gif">
 <meta property="og:image" content="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/tigasedb.jpg">
-<meta property="og:image" content="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/tigasedb.jpg">
-<meta property="og:updated_time" content="2017-09-27T04:24:11.000Z">
+<meta property="og:updated_time" content="2017-09-27T04:42:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tigase开发--Tigase服务器搭建">
 <meta name="twitter:description" content="tigase,tigase服务器,xmpp">
@@ -194,13 +192,13 @@ var _hmt = _hmt || [];
 <p><strong>基本环境:</strong> jdk安装</p>
 <h3 id="3-安装过程需要注意的问题"><a href="#3-安装过程需要注意的问题" class="headerlink" title="3. 安装过程需要注意的问题"></a>3. 安装过程需要注意的问题</h3><p><strong>安装步骤：</strong> 根据你选择的安装方式，查看对应的官方文档，我选择的是最简单的GUI方式，文档路径:docs/Administration_Guide/html/index.html#guiinstall</p>
 <p><strong>注意点1：</strong> Basic Server Configuration（基本服务配置）</p>
-<p><img src="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/serverConfiguration.gif" alt="ServerConfguration"><br><img src="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/serverConfiguration.gif"></p>
+<p><img src="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/serverConfiguration.gif" alt="ServerConfguration"></p>
 <ul>
 <li>Your XMPP(Jabber) domains:自定义xmpp域名，比如veloci.tigase.org</li>
 <li>Server administrators:管理员账号（在数据库注册的第一个用户），格式为：名称@自定义的域名，比如admin@veloci.tigase.org<br>账户名称必须是：名称@自定义的域名,自定义的域名部门必须与Your XMPP(Jabber) domains中定义的一致，否则登录会报authentication相关的错</li>
 </ul>
 <p><strong>注意点2：</strong> Tigase数据库安装</p>
-<p><img src="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/tigasedb.jpg" alt="tigasedb"><br><img src="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/tigasedb.jpg"></p>
+<p><img src="http://alonesingingstar.site/Tigase开发-Tigase服务器搭建/tigasedb.jpg" alt="tigasedb"></p>
 <p>成功后，会在本地mysql数据库生成tigasedb数据库，其中可以在tig_users表中看到之前注册的Server administrators:管理员账号(在这个数据库中存在的用户，可以用来登录)</p>
 <h3 id="4-启动Tigase服务，验证安装是否成功"><a href="#4-启动Tigase服务，验证安装是否成功" class="headerlink" title="4.启动Tigase服务，验证安装是否成功"></a>4.启动Tigase服务，验证安装是否成功</h3><p>启动MySQL服务，确保MySQL数据库可连接</p>
 <p>进入安装Tigase后生成的目录，执行：./scripts/tigase.sh start etc/tigase.conf，启动服务</p>
