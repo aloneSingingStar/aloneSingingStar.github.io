@@ -115,6 +115,8 @@ hexo server
 
 * hexo deploy
 
+* hexo clean && hexo generate && hexo deploy
+
 * 访问http://aloneSingingStar.github.io
 
 ### 11.配置主题
@@ -439,3 +441,54 @@ PostAsset.virtual('path').get(function() {
 如果不改，执行hexo generate时会报错：Error: ENOTDIR: not a directory
 
 参考(https://leokongwq.github.io/2016/10/14/hexo-post-asset-folder-html.html)
+
+### 25 yilia主题引入mermaid
+* 1.博客目录下安装hexo-filter-mermaid-diagrams
+```
+npm install -s hexo-filter-mermaid-diagrams
+
+```
+* 2._config.yml中配置mermaid相关属性
+```
+# mermaid chart
+mermaid: ## mermaid url https://github.com/knsv/mermaid
+  enable: true
+  version: "8.0.0"
+  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+    #startOnload: true  // default true
+```
+* 3.主题目录下找到页脚模板文件，themes/yilia/layout/_partials/footer.ejs，在footer.ejs文件最后添加以下代码
+```
+{% if theme.mermaid.enable %}
+  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %}
+
+```
+***代码中获取theme.mermaid.version属性***可能会出问题，所以可以直接写死为：https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
+```
+{% if theme.mermaid.enable %}
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %}
+```
+* 4.代码使用
+```
+{% mermaid %}
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+{% endmermaid %}
+
+```
+参考(https://github.com/webappdevelp/hexo-filter-mermaid-diagrams)
