@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://alonesingingstar.site">
+  <link rel="dns-prefetch" href="https://alonesingingstar.github.io">
   <title>Tag: hexo | aloneSiningStar的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="android、java技术">
 <meta name="keywords" content="android,java">
 <meta property="og:type" content="website">
 <meta property="og:title" content="aloneSiningStar的博客">
-<meta property="og:url" content="http://alonesingingstar.site/tags/hexo/index.html">
+<meta property="og:url" content="https://alonesingingstar.github.io/tags/hexo/index.html">
 <meta property="og:site_name" content="aloneSiningStar的博客">
 <meta property="og:description" content="android、java技术">
 <meta property="og:locale" content="zh-CN">
@@ -234,7 +234,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 aloneSingingStar
+    		&copy; 2021 aloneSingingStar
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -246,7 +246,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 aloneSingingStar
+    		&copy; 2021 aloneSingingStar
     	</div>
       	<div class="footer-right">
       		总访问<span id="busuanzi_value_site_pv"></span>次
@@ -257,7 +257,8 @@ var _hmt = _hmt || [];
       	</div>
     </div>
   </div>
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script>
 	var _hmt = _hmt || [];
 	(function() {
@@ -268,6 +269,17 @@ var _hmt = _hmt || [];
 	})();
   </script>
 </footer>
+
+{% if theme.mermaid.enable %}
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/8.10.2/mermaid.min.js"></script> -->
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %}
+
 
     </div>
     <script>

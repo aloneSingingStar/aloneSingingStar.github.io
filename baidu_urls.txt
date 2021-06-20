@@ -1,3 +1,4 @@
-http://alonesingingstar.site/Tigase开发-Tigase服务器搭建.html
-http://alonesingingstar.site/hexo搭建博客.html
-http://alonesingingstar.site/hello-world.html
+https://alonesingingstar.github.io/线程池.html
+https://alonesingingstar.github.io/Tigase开发-Tigase服务器搭建.html
+https://alonesingingstar.github.io/hexo搭建博客.html
+https://alonesingingstar.github.io/hello-world.html

@@ -4,7 +4,42 @@
 
     
   <url>
-    <loc>http://alonesingingstar.site/Tigase%E5%BC%80%E5%8F%91-Tigase%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA.html</loc>
+    <loc>https://alonesingingstar.github.io/%E7%BA%BF%E7%A8%8B%E6%B1%A0.html</loc>
+    <lastmod>2021-06-20T05:42:13.163Z</lastmod>
+    <data>
+        <display>
+        <title>线程池</title>
+        <pubTime>2021-06-16T14:18:48.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alonesingingstar.github.io/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
+    <lastmod>2021-06-17T08:46:16.397Z</lastmod>
+    <data>
+        <display>
+        <title>hexo搭建博客</title>
+        <pubTime>2017-09-10T05:48:42.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="https://alonesingingstar.github.io/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alonesingingstar.github.io/Tigase%E5%BC%80%E5%8F%91-Tigase%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA.html</loc>
     <lastmod>2017-09-27T04:42:40.000Z</lastmod>
     <data>
         <display>
@@ -20,7 +55,7 @@
          
            
              
-              <breadCrumb title="tigase" url="http://alonesingingstar.site/categories/tigase/"/>
+              <breadCrumb title="tigase" url="https://alonesingingstar.github.io/categories/tigase/"/>
           
         </display>
     </data>
@@ -28,27 +63,7 @@
 
     
   <url>
-    <loc>http://alonesingingstar.site/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html</loc>
-    <lastmod>2017-09-27T04:42:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo搭建博客</title>
-        <pubTime>2017-09-10T05:48:42.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://alonesingingstar.site/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://alonesingingstar.site/hello-world.html</loc>
+    <loc>https://alonesingingstar.github.io/hello-world.html</loc>
     <lastmod>2017-09-12T12:31:51.000Z</lastmod>
     <data>
         <display>
@@ -60,7 +75,7 @@
          
            
              
-              <breadCrumb title="default" url="http://alonesingingstar.site/categories/default/"/>
+              <breadCrumb title="default" url="https://alonesingingstar.github.io/categories/default/"/>
           
         </display>
     </data>

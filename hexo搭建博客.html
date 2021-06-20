@@ -5,18 +5,18 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://alonesingingstar.site">
+  <link rel="dns-prefetch" href="https://alonesingingstar.github.io">
   <title>hexo搭建博客 | aloneSiningStar的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="hexo,github搭建个人博客,使用yilia主题,SEO优化">
 <meta name="keywords" content="hexo,yilia,SEO,github,sitemap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo搭建博客">
-<meta property="og:url" content="http://alonesingingstar.site/hexo搭建博客.html">
+<meta property="og:url" content="https://alonesingingstar.github.io/hexo搭建博客.html">
 <meta property="og:site_name" content="aloneSiningStar的博客">
 <meta property="og:description" content="hexo,github搭建个人博客,使用yilia主题,SEO优化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-27T04:42:20.000Z">
+<meta property="og:updated_time" content="2021-06-17T08:46:16.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建博客">
 <meta name="twitter:description" content="hexo,github搭建个人博客,使用yilia主题,SEO优化">
@@ -228,7 +228,7 @@ var _hmt = _hmt || [];
 </li>
 <li><p>hexo deploy</p>
 </li>
-<li><p>访问<a href="http://aloneSingingStar.github.io" target="_blank" rel="external">http://aloneSingingStar.github.io</a></p>
+<li><p>访问<a href="http://aloneSingingStar.github.io">http://aloneSingingStar.github.io</a></p>
 </li>
 </ul>
 <h3 id="11-配置主题"><a href="#11-配置主题" class="headerlink" title="11.配置主题"></a>11.配置主题</h3><p><strong>主题网址：</strong><a href="https://hexo.io/themes/" target="_blank" rel="external">主题网址</a><br>我使用的是yilia,步骤如下：</p>
@@ -290,7 +290,7 @@ themes/yilia/
 <li>1.购买域名，我购买的是阿里云的</li>
 <li>2.域名解析：进入阿里云控制台，点击添加解析，【记录类型：A】【主机记录：@】【解析线路：默认】【记录值：ip(ping alonesingingstar.github.io得到的IP）】，然后保存即可<br>注：记录类型:CNAME , 记录值:alonesingingstar.github.io  是不行的，因为alonesingingstar.github.io不是顶级域名，没有备案的</li>
 <li>3.在alonesingingstar.github.io/source目录下新建CNAME文件，里面内容是你买的域名</li>
-<li>4.重新部署，然后用你的域名访问网站，我的是：<a href="http://alonesingingstar.site">http://alonesingingstar.site</a></li>
+<li>4.重新部署，然后用你的域名访问网站，我的是：<a href="http://alonesingingstar.site" target="_blank" rel="external">http://alonesingingstar.site</a></li>
 </ul>
 <h3 id="18-网站SEO优化"><a href="#18-网站SEO优化" class="headerlink" title="18 网站SEO优化"></a>18 网站SEO优化</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p><a href="http://zhanzhang.baidu.com/college/articleinfo?id=1003" target="_blank" rel="external">http://zhanzhang.baidu.com/college/articleinfo?id=1003</a></p>
 <ul>
@@ -314,7 +314,7 @@ themes/yilia/
 <li>2.配置根目录下的_config.yml</li>
 </ul>
 <p>sitemap:<br>    path: sitemap.xml<br>baidusitemap:<br>    path: baidusitemap.xml</p>
-<p>url: <a href="http://alonesingingstar.site/(你的网址">http://alonesingingstar.site/(你的网址</a>)<br>root: /<br>permalink: :year/:month/:day/:title/<br>permalink_defaults:</p>
+<p>url: <a href="http://alonesingingstar.site/(你的网址" target="_blank" rel="external">http://alonesingingstar.site/(你的网址</a>)<br>root: /<br>permalink: :year/:month/:day/:title/<br>permalink_defaults:</p>
 <ul>
 <li>3.部署，部署后会生成sitemap.xml、baidusitemap.xml文件（这两者的区别在于 baidusitemap.xml 是百度搜索引擎的专用文件,另一个是通用）</li>
 </ul>
@@ -337,7 +337,7 @@ themes/yilia/
 </ul>
 <p>到百度站长/站点管理/网页抓取/链接提交 中并没有看到提交的链接，需要等一段时间（可能要一两天），然后使用site:你的域名，才能搜索到<br>具体原因如下：<a href="http://tengj.top/2016/03/14/baidunoshouluresson/" target="_blank" rel="external">http://tengj.top/2016/03/14/baidunoshouluresson/</a></p>
 <p>9/12 下午16:29，使用百度搜索：site:alonesingingstar.site，已经可以搜索到了</p>
-<h3 id="21-向谷歌提交链接"><a href="#21-向谷歌提交链接" class="headerlink" title="21 向谷歌提交链接"></a>21 向谷歌提交链接</h3><p>具体步骤：进入谷歌站长页面（<a href="https://www.google.com/webmasters/，用你的谷歌账户登录，然后点击添加属性，输入你的网址）" target="_blank" rel="external">https://www.google.com/webmasters/，用你的谷歌账户登录，然后点击添加属性，输入你的网址）</a><br>1.下载HTML验证文件（在内容中加入layout: false,网上说hexo会编译这个文件，设置这个不让它编译）<br>2.将该文件放到/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/source目录下。<br>3.重新部署网站<br>4.通过在浏览器中访问 <a href="http://alonesingingstar.site/google2f21809f4cc6b2ea.html">http://alonesingingstar.site/google2f21809f4cc6b2ea.html</a> 确认上传成功。<br>6.点击验证<br>7.进入谷歌的Search Console，点击站点地图/添加站点地图,比如我的是<a href="http://alonesingingstar.site/sitemap.xml,添加后就能抓取到">http://alonesingingstar.site/sitemap.xml,添加后就能抓取到</a><br>结果：您无权使用此资源。请验证此资源，或请资源所有者将您添加为用户，要等一段时间<br>等一段时间后：<br>恭喜！您已成功验证您对 <a href="http://alonesingingstar.site/">http://alonesingingstar.site/</a> 网站的所有权。<br>继续</p>
+<h3 id="21-向谷歌提交链接"><a href="#21-向谷歌提交链接" class="headerlink" title="21 向谷歌提交链接"></a>21 向谷歌提交链接</h3><p>具体步骤：进入谷歌站长页面（<a href="https://www.google.com/webmasters/，用你的谷歌账户登录，然后点击添加属性，输入你的网址）" target="_blank" rel="external">https://www.google.com/webmasters/，用你的谷歌账户登录，然后点击添加属性，输入你的网址）</a><br>1.下载HTML验证文件（在内容中加入layout: false,网上说hexo会编译这个文件，设置这个不让它编译）<br>2.将该文件放到/Users/aloneSingingStar/xyb/blog/aloneSingingStar.github.io/source目录下。<br>3.重新部署网站<br>4.通过在浏览器中访问 <a href="http://alonesingingstar.site/google2f21809f4cc6b2ea.html" target="_blank" rel="external">http://alonesingingstar.site/google2f21809f4cc6b2ea.html</a> 确认上传成功。<br>6.点击验证<br>7.进入谷歌的Search Console，点击站点地图/添加站点地图,比如我的是<a href="http://alonesingingstar.site/sitemap.xml,添加后就能抓取到" target="_blank" rel="external">http://alonesingingstar.site/sitemap.xml,添加后就能抓取到</a><br>结果：您无权使用此资源。请验证此资源，或请资源所有者将您添加为用户，要等一段时间<br>等一段时间后：<br>恭喜！您已成功验证您对 <a href="http://alonesingingstar.site/" target="_blank" rel="external">http://alonesingingstar.site/</a> 网站的所有权。<br>继续</p>
 <p>使用谷歌搜索：site:alonesingingstar.site，暂时还搜索不到，先等吧</p>
 <p>进入站长页面的Search Console，点击Google抓取工具，点击抓取，一定要请求将网址和链接页编入索引，然后使用site:alonesingingstar.site搜索，就能搜索到了</p>
 <h3 id="22-提升排名"><a href="#22-提升排名" class="headerlink" title="22.提升排名"></a>22.提升排名</h3><ul>
@@ -374,6 +374,23 @@ themes/yilia/
 <p>改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">PostAsset.virtual(&apos;path&apos;).get(function() &#123;</div><div class="line">    var Post = ctx.model(&apos;Post&apos;);</div><div class="line">    var post = Post.findById(this.post);</div><div class="line">    if (!post) return;</div><div class="line">    // PostAsset.path is file path relative to `public_dir`</div><div class="line">    // no need to urlescape, #1562</div><div class="line">      //如果生成的文章路径是以html结尾的, 如:  2016/10/13/byte-order.html,</div><div class="line">      // 则对应的资源路径应该是: 2016/10/13/byte-order + this.slug</div><div class="line">      var reg = new RegExp(&quot;html&quot; + &quot;$&quot;);</div><div class="line">      if(reg.test(post.path)) &#123;</div><div class="line">    var assetPath = post.path.substr(0, post.path.lastIndexOf(&quot;.&quot;));</div><div class="line">    return pathFn.join(assetPath, this.slug);</div><div class="line">      &#125;</div><div class="line">      return pathFn.join(post.path, this.slug);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
 <p>如果不改，执行hexo generate时会报错：Error: ENOTDIR: not a directory</p>
 <p>参考(<a href="https://leokongwq.github.io/2016/10/14/hexo-post-asset-folder-html.html" target="_blank" rel="external">https://leokongwq.github.io/2016/10/14/hexo-post-asset-folder-html.html</a>)</p>
+<h3 id="25-yilia主题引入mermaid"><a href="#25-yilia主题引入mermaid" class="headerlink" title="25 yilia主题引入mermaid"></a>25 yilia主题引入mermaid</h3><ul>
+<li><p>1.博客目录下安装hexo-filter-mermaid-diagrams</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -s hexo-filter-mermaid-diagrams</div></pre></td></tr></table></figure>
+</li>
+<li><p>2._config.yml中配置mermaid相关属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># mermaid chart</div><div class="line">mermaid: ## mermaid url https://github.com/knsv/mermaid</div><div class="line">  enable: true</div><div class="line">  version: &quot;8.0.0&quot;</div><div class="line">  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js</div><div class="line">    #startOnload: true  // default true</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.主题目录下找到页脚模板文件，themes/yilia/layout/_partials/footer.ejs，在footer.ejs文件最后添加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.mermaid.enable %&#125;</div><div class="line">  &lt;script src=&apos;https://unpkg.com/mermaid@&#123;&#123; theme.mermaid.version &#125;&#125;/dist/mermaid.min.js&apos;&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    if (window.mermaid) &#123;</div><div class="line">      mermaid.initialize(&#123;theme: &apos;forest&apos;&#125;);</div><div class="line">    &#125;</div><div class="line">  &lt;/script&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong><em>代码中获取theme.mermaid.version属性</em></strong>可能会出问题，所以可以直接写死为：<a href="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js" target="_blank" rel="external">https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.mermaid.enable %&#125;</div><div class="line">  &lt;script src=&apos;https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js&apos;&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    if (window.mermaid) &#123;</div><div class="line">      mermaid.initialize(&#123;theme: &apos;forest&apos;&#125;);</div><div class="line">    &#125;</div><div class="line">  &lt;/script&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>4.代码使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% mermaid %&#125;</div><div class="line">graph TD;</div><div class="line">    A--&gt;B;</div><div class="line">    A--&gt;C;</div><div class="line">    B--&gt;D;</div><div class="line">    C--&gt;D;</div><div class="line">&#123;% endmermaid %&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>参考(<a href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams" target="_blank" rel="external">https://github.com/webappdevelp/hexo-filter-mermaid-diagrams</a>)</p>
 
       
 
@@ -485,7 +502,7 @@ themes/yilia/
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://alonesingingstar.site/hexo搭建博客.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://alonesingingstar.github.io/hexo搭建博客.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -537,7 +554,7 @@ themes/yilia/
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在github上新建项目："><span class="toc-number">1.</span> <span class="toc-text">1.在github上新建项目：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-本地新建目录"><span class="toc-number">2.</span> <span class="toc-text">2.本地新建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-进入aloneSingingStar-github-io目录，初始化hexo"><span class="toc-number">3.</span> <span class="toc-text">3.进入aloneSingingStar.github.io目录，初始化hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-安装依赖"><span class="toc-number">4.</span> <span class="toc-text">4.安装依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装博客部署插件"><span class="toc-number">5.</span> <span class="toc-text">5.安装博客部署插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-配置-comfig-xml，设置部署分支为master"><span class="toc-number">6.</span> <span class="toc-text">6.配置_comfig.xml，设置部署分支为master</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-将项目添加到github"><span class="toc-number">7.</span> <span class="toc-text">7.将项目添加到github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-在本地和远程创建hexo分支-并且本地切换到hexo分支-并拉取代码"><span class="toc-number">8.</span> <span class="toc-text">8.在本地和远程创建hexo分支,并且本地切换到hexo分支,并拉取代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-启动本地服务器测试"><span class="toc-number">9.</span> <span class="toc-text">9.启动本地服务器测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-预览没有问题后，执行如下操作部署到github"><span class="toc-number">10.</span> <span class="toc-text">10.预览没有问题后，执行如下操作部署到github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-配置主题"><span class="toc-number">11.</span> <span class="toc-text">11.配置主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-配置百度统计（只能后台统计，无法前台展示）"><span class="toc-number">12.</span> <span class="toc-text">12.配置百度统计（只能后台统计，无法前台展示）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-配置不蒜子，在网页显示访问量"><span class="toc-number">13.</span> <span class="toc-text">13.配置不蒜子，在网页显示访问量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-提交hexo分支上的修改"><span class="toc-number">14.</span> <span class="toc-text">14.提交hexo分支上的修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-在博客的md文件中，加入截断标签"><span class="toc-number">15.</span> <span class="toc-text">15.在博客的md文件中，加入截断标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-给文章设置tag-用于搜索"><span class="toc-number">16.</span> <span class="toc-text">16 给文章设置tag,用于搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-绑定域名"><span class="toc-number">17.</span> <span class="toc-text">17 绑定域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-网站SEO优化"><span class="toc-number">18.</span> <span class="toc-text">18 网站SEO优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一"><span class="toc-number">18.1.</span> <span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二"><span class="toc-number">18.2.</span> <span class="toc-text">方式二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-生成网站地图"><span class="toc-number">19.</span> <span class="toc-text">19 生成网站地图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-向百度提交链接-在百度站长平台设置"><span class="toc-number">20.</span> <span class="toc-text">20 向百度提交链接(在百度站长平台设置)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#推送方式"><span class="toc-number">20.1.</span> <span class="toc-text">推送方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#推送方式–主动推送"><span class="toc-number">20.2.</span> <span class="toc-text">推送方式–主动推送</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-向谷歌提交链接"><span class="toc-number">21.</span> <span class="toc-text">21 向谷歌提交链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-提升排名"><span class="toc-number">22.</span> <span class="toc-text">22.提升排名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-加入友言评论系统"><span class="toc-number">23.</span> <span class="toc-text">23 加入友言评论系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-博客中引用图片"><span class="toc-number">24.</span> <span class="toc-text">24 博客中引用图片</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在github上新建项目："><span class="toc-number">1.</span> <span class="toc-text">1.在github上新建项目：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-本地新建目录"><span class="toc-number">2.</span> <span class="toc-text">2.本地新建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-进入aloneSingingStar-github-io目录，初始化hexo"><span class="toc-number">3.</span> <span class="toc-text">3.进入aloneSingingStar.github.io目录，初始化hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-安装依赖"><span class="toc-number">4.</span> <span class="toc-text">4.安装依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装博客部署插件"><span class="toc-number">5.</span> <span class="toc-text">5.安装博客部署插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-配置-comfig-xml，设置部署分支为master"><span class="toc-number">6.</span> <span class="toc-text">6.配置_comfig.xml，设置部署分支为master</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-将项目添加到github"><span class="toc-number">7.</span> <span class="toc-text">7.将项目添加到github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-在本地和远程创建hexo分支-并且本地切换到hexo分支-并拉取代码"><span class="toc-number">8.</span> <span class="toc-text">8.在本地和远程创建hexo分支,并且本地切换到hexo分支,并拉取代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-启动本地服务器测试"><span class="toc-number">9.</span> <span class="toc-text">9.启动本地服务器测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-预览没有问题后，执行如下操作部署到github"><span class="toc-number">10.</span> <span class="toc-text">10.预览没有问题后，执行如下操作部署到github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-配置主题"><span class="toc-number">11.</span> <span class="toc-text">11.配置主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-配置百度统计（只能后台统计，无法前台展示）"><span class="toc-number">12.</span> <span class="toc-text">12.配置百度统计（只能后台统计，无法前台展示）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-配置不蒜子，在网页显示访问量"><span class="toc-number">13.</span> <span class="toc-text">13.配置不蒜子，在网页显示访问量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-提交hexo分支上的修改"><span class="toc-number">14.</span> <span class="toc-text">14.提交hexo分支上的修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-在博客的md文件中，加入截断标签"><span class="toc-number">15.</span> <span class="toc-text">15.在博客的md文件中，加入截断标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-给文章设置tag-用于搜索"><span class="toc-number">16.</span> <span class="toc-text">16 给文章设置tag,用于搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-绑定域名"><span class="toc-number">17.</span> <span class="toc-text">17 绑定域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-网站SEO优化"><span class="toc-number">18.</span> <span class="toc-text">18 网站SEO优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一"><span class="toc-number">18.1.</span> <span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二"><span class="toc-number">18.2.</span> <span class="toc-text">方式二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-生成网站地图"><span class="toc-number">19.</span> <span class="toc-text">19 生成网站地图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-向百度提交链接-在百度站长平台设置"><span class="toc-number">20.</span> <span class="toc-text">20 向百度提交链接(在百度站长平台设置)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#推送方式"><span class="toc-number">20.1.</span> <span class="toc-text">推送方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#推送方式–主动推送"><span class="toc-number">20.2.</span> <span class="toc-text">推送方式–主动推送</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-向谷歌提交链接"><span class="toc-number">21.</span> <span class="toc-text">21 向谷歌提交链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-提升排名"><span class="toc-number">22.</span> <span class="toc-text">22.提升排名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-加入友言评论系统"><span class="toc-number">23.</span> <span class="toc-text">23 加入友言评论系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-博客中引用图片"><span class="toc-number">24.</span> <span class="toc-text">24 博客中引用图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-yilia主题引入mermaid"><span class="toc-number">25.</span> <span class="toc-text">25 yilia主题引入mermaid</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -571,7 +588,7 @@ themes/yilia/
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 aloneSingingStar
+    		&copy; 2021 aloneSingingStar
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -583,7 +600,7 @@ themes/yilia/
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 aloneSingingStar
+    		&copy; 2021 aloneSingingStar
     	</div>
       	<div class="footer-right">
       		总访问<span id="busuanzi_value_site_pv"></span>次
@@ -594,7 +611,8 @@ themes/yilia/
       	</div>
     </div>
   </div>
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script>
 	var _hmt = _hmt || [];
 	(function() {
@@ -605,6 +623,17 @@ themes/yilia/
 	})();
   </script>
 </footer>
+
+{% if theme.mermaid.enable %}
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/8.10.2/mermaid.min.js"></script> -->
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+{% endif %}
+
 
     </div>
     <script>

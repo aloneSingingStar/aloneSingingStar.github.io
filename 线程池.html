@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://alonesingingstar.github.io">
-  <title>Archives | aloneSiningStar的博客</title>
+  <title>线程池 | aloneSiningStar的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="android、java技术">
+  <meta name="description" content="线程池优点：降低资源消耗： 通过重复利用已创建的线程降低线程创建和销毁的消耗提高响应速度： 当任务到达时，任务可以不需要等待线程创建就能立即执行提高线程的可管理性： 线程是稀缺资源，如果无限制创建，不仅会消耗系统资源，还会降低系统的稳定性（线程切换的开销），使用线程池可以进行统一的分配，调优和监控。 ThreadPoolExecutor构造方法123new ThreadPoolExecutor(i">
 <meta name="keywords" content="android,java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="aloneSiningStar的博客">
-<meta property="og:url" content="https://alonesingingstar.github.io/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线程池">
+<meta property="og:url" content="https://alonesingingstar.github.io/线程池.html">
 <meta property="og:site_name" content="aloneSiningStar的博客">
-<meta property="og:description" content="android、java技术">
+<meta property="og:description" content="线程池优点：降低资源消耗： 通过重复利用已创建的线程降低线程创建和销毁的消耗提高响应速度： 当任务到达时，任务可以不需要等待线程创建就能立即执行提高线程的可管理性： 线程是稀缺资源，如果无限制创建，不仅会消耗系统资源，还会降低系统的稳定性（线程切换的开销），使用线程池可以进行统一的分配，调优和监控。 ThreadPoolExecutor构造方法123new ThreadPoolExecutor(i">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-06-20T05:42:13.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="aloneSiningStar的博客">
-<meta name="twitter:description" content="android、java技术">
+<meta name="twitter:title" content="线程池">
+<meta name="twitter:description" content="线程池优点：降低资源消耗： 通过重复利用已创建的线程降低线程创建和销毁的消耗提高响应速度： 当任务到达时，任务可以不需要等待线程创建就能立即执行提高线程的可管理性： 线程是稀缺资源，如果无限制创建，不仅会消耗系统资源，还会降低系统的稳定性（线程切换的开销），使用线程池可以进行统一的分配，调优和监控。 ThreadPoolExecutor构造方法123new ThreadPoolExecutor(i">
   
     <link rel="alternative" href="/atom.xml" title="aloneSiningStar的博客" type="application/atom+xml">
   
@@ -160,214 +161,199 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-线程池" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      线程池
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/线程池.html" class="archive-article-date">
+
+        
+        <a href="/线程池.html" class="archive-article-date">
   	<time datetime="2021-06-16T14:18:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/线程池.html">线程池</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+
       
-        </div></section>
+        <h2 id="线程池优点："><a href="#线程池优点：" class="headerlink" title="线程池优点："></a>线程池优点：</h2><p><strong>降低资源消耗：</strong> 通过重复利用已创建的线程降低线程<strong>创建</strong>和<strong>销毁</strong>的消耗<br><strong>提高响应速度：</strong> 当任务到达时，任务可以不需要等待线程创建就能立即执行<br><strong>提高线程的可管理性：</strong> 线程是稀缺资源，如果无限制创建，不仅会消耗系统资源，还会降低系统的稳定性（线程切换的开销），使用线程池可以进行统一的分配，调优和监控。</p>
+<h3 id="ThreadPoolExecutor构造方法"><a href="#ThreadPoolExecutor构造方法" class="headerlink" title="ThreadPoolExecutor构造方法"></a>ThreadPoolExecutor构造方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">new ThreadPoolExecutor(int corePoolSize,int maximumPoolSize,long keepAliveTime,</div><div class="line">			TimeUnit unit,BlockingQueue&lt;Runnable&gt; workQueue,ThreadFactory threadFactory,</div><div class="line">			RejectedExecutionHandler handler)</div></pre></td></tr></table></figure>
+<p>corePoolSize:核心线程数大小<br>maximumPoolSize:最大线程数大小(maximumPoolSize-corePoolSize的值为非核心线程数大小)<br>keepAliveTime:非核心线程在执行完任务后，等待下一个任务的时间，超过这个时间则会销毁<br>workQueue:用来暂时保存任务的阻塞队列<br>threadFactory:用于创建工作线程的工厂，比如可以在这里给线程命名<br>handler:任务拒绝策略（线程池非RUNNING状态/阻塞队列已经满，线程池线程数量达到maximumPoolSize）</p>
+<h2 id="自带线程池创建方式分析"><a href="#自带线程池创建方式分析" class="headerlink" title="自带线程池创建方式分析"></a>自带线程池创建方式分析</h2><h3 id="Executors-newFixedThreadPool-int-nThreads"><a href="#Executors-newFixedThreadPool-int-nThreads" class="headerlink" title="Executors.newFixedThreadPool(int nThreads)"></a>Executors.newFixedThreadPool(int nThreads)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new ThreadPoolExecutor(nThreads,nThreads,0,TimeUnit.MILLISECONDS,new 					LinkedBlockingQueue&lt;Runnable&gt;())</div></pre></td></tr></table></figure>
+<p>假设指定mThreads = 10<br>1.主线程执行execute<br>2.执行workerCountOf(c) &lt; corePoolSize(10)，条件成立<br>3.执行addWorker(command, true),创建一个Worker(extends AbstractQueuedSynchronizer implements Runnable),Worker内部维护了一个Thread线程执行任务,thread启动时，会调用Worker覆写的run方法，最终调用runWorker(this)<br>4.进入runWorker(this)后，执行当前task后，将task置为null,然后进入getTask();<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(task != <span class="keyword">null</span> || (task = getTask())!= <span class="keyword">null</span>)&#123;</div><div class="line">    task.run();</div><div class="line">    task = <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5.进入getTask()后，执行workQueue.take()，即执行LinkedBlockingQueue的take方法，默认是非公平模式（且无法指定为公平模式），然后线程会阻塞在notEmpty.await()方法中。<br>6.当工作线程数为10，不满足workerCountOf(c) &lt; corePoolSize(10),执行isRunning(c) &amp;&amp; workQueue.offer(command)，即调用LinkedBlockingQueue的offer方法，执行enqueue(node)后，notFull.signal()通知队列未满，notEmpty.signal()通知正在等待的线程，某个等待的线程收到通知后，继续执行take()方法中的dequeue(),并且判断如果队列中还堆积了任务，则再次调用notEmpty.signal()通知其他正在等待的线程，最终返回当前取到的task,回到runWoker(this)中执行task.run()。</p>
+<h3 id="Executors-newSingleThreadPool"><a href="#Executors-newSingleThreadPool" class="headerlink" title="Executors.newSingleThreadPool()"></a>Executors.newSingleThreadPool()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new ThreadPoolExecutor(1,1,0,TimeUnit.MILLISECONDS,new LinkedBlockingQueue&lt;Runnable&gt;())</div></pre></td></tr></table></figure>
+<h3 id="Executors-newCachedThreadPool"><a href="#Executors-newCachedThreadPool" class="headerlink" title="Executors.newCachedThreadPool()"></a>Executors.newCachedThreadPool()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new ThreadPoolExecutor(0,Integer.MAX_VALUE,60L,TimeUnit.SECONDS,new  				SynchronousQueue&lt;Runnable&gt;())</div></pre></td></tr></table></figure>
+<p>1.主线程执行execute<br>2.执行workerCountOf(c) &lt; corePoolSize(0)，条件不成立。<br>3.执行isRunning(c) &amp;&amp; workQueue.offer(command)，即调用SynchronousQueue的offer方法，默认是非公平模式，调用TransferStack的transfer方法，transferer.transfer(e, true, 0),满足if (timed &amp;&amp; nanos &lt;= 0)，返回null,最终SynchronousQueue的offer返回false,条件不成立。<br>4.执行!addWorker(command, false)，即调用addWorker(command, false),创建一个Worker(extends AbstractQueuedSynchronizer implements Runnable),Worker内部维护了一个Thread线程执行任务,thread启动时，会调用Worker覆写的run方法，最终调用runWorker(this)（此线程为非核心线程，在执行完任务后，会等待60秒，超时后，会被销毁）<br>5.进入runWorker(this)后，执行当前task后，将task置为null,然后进入getTask();<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(task != <span class="keyword">null</span> || (task = getTask())!= <span class="keyword">null</span>)&#123;</div><div class="line">    task.run();</div><div class="line">    task = <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>6.进入getTask()后，执行workQueue.poll(keepAliveTime, TimeUnit.NANOSECONDS)，即执行SynchronousQueue的poll方法，默认是非公平模式，调用TransferStack的transfer方法，transferer.transfer(null, true, unit.toNanos(timeout)),unit.toNanos(timeout)值为60000,满足else if (casHead(h, s = snode(s, e, h, mode)))，然后线程会阻塞在awaitFulfill方法中。<br>    6.1 如果等待超时，最终会回到runWorker(this)中的processWorkerExit(w, completedAbruptly);线程执行结束，即被销毁。<br>    6.2，没有超时，此时第二个任务进入。进入7<br>7.主线程执行execute<br>8.执行workerCountOf(c) &lt; corePoolSize(0)，条件不成立。<br>9.执行isRunning(c) &amp;&amp; workQueue.offer(command)，即调用SynchronousQueue的offer方法，默认是非公平模式，调用TransferStack的transfer方法，transferer.transfer(e, true, 0),满足else if (!isFulfilling(h.mode))，执行else if (casHead(h, s=snode(s, e, h, FULFILLING|mode)))中的m.tryMatch(s)，最终返回匹配的task,回到runWoker(this)中执行task.run()</p>
+<h2 id="线程池主要处理流程分析"><a href="#线程池主要处理流程分析" class="headerlink" title="线程池主要处理流程分析"></a>线程池主要处理流程分析</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (command == <span class="keyword">null</span>)</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</div><div class="line">        <span class="comment">/*</span></div><div class="line"><span class="comment">         * Proceed in 3 steps:</span></div><div class="line"><span class="comment">         *</span></div><div class="line"><span class="comment">         * 1. If fewer than corePoolSize threads are running, try to</span></div><div class="line"><span class="comment">         * start a new thread with the given command as its first</span></div><div class="line"><span class="comment">         * task.  The call to addWorker atomically checks runState and</span></div><div class="line"><span class="comment">         * workerCount, and so prevents false alarms that would add</span></div><div class="line"><span class="comment">         * threads when it shouldn't, by returning false.</span></div><div class="line"><span class="comment">         *</span></div><div class="line"><span class="comment">         * 2. If a task can be successfully queued, then we still need</span></div><div class="line"><span class="comment">         * to double-check whether we should have added a thread</span></div><div class="line"><span class="comment">         * (because existing ones died since last checking) or that</span></div><div class="line"><span class="comment">         * the pool shut down since entry into this method. So we</span></div><div class="line"><span class="comment">         * recheck state and if necessary roll back the enqueuing if</span></div><div class="line"><span class="comment">         * stopped, or start a new thread if there are none.</span></div><div class="line"><span class="comment">         *</span></div><div class="line"><span class="comment">         * 3. If we cannot queue task, then we try to add a new</span></div><div class="line"><span class="comment">         * thread.  If it fails, we know we are shut down or saturated</span></div><div class="line"><span class="comment">         * and so reject the task.</span></div><div class="line"><span class="comment">         */</span></div><div class="line">        <span class="keyword">int</span> c = ctl.get();</div><div class="line">        <span class="keyword">if</span> (workerCountOf(c) &lt; corePoolSize) &#123;</div><div class="line">            <span class="keyword">if</span> (addWorker(command, <span class="keyword">true</span>))</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            c = ctl.get();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (isRunning(c) &amp;&amp; workQueue.offer(command)) &#123;</div><div class="line">            <span class="keyword">int</span> recheck = ctl.get();</div><div class="line">            <span class="keyword">if</span> (! isRunning(recheck) &amp;&amp; remove(command))</div><div class="line">                reject(command);</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (workerCountOf(recheck) == <span class="number">0</span>)</div><div class="line">                addWorker(<span class="keyword">null</span>, <span class="keyword">false</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (!addWorker(command, <span class="keyword">false</span>))</div><div class="line">            reject(command);</div></pre></td></tr></table></figure>
+<h2 id="工作线程Worker分析"><a href="#工作线程Worker分析" class="headerlink" title="工作线程Worker分析"></a>工作线程Worker分析</h2><h2 id="submit-Runnable-runnable-与execute-Runnable-runnable"><a href="#submit-Runnable-runnable-与execute-Runnable-runnable" class="headerlink" title="submit(Runnable runnable)与execute(Runnable runnable)"></a>submit(Runnable runnable)与execute(Runnable runnable)</h2><p>提交到submit的runnable任务<strong>每次</strong>都会被包装成FutureTask</p>
+<p>区别点一：<br>执行100次submit，runnable.toString()得到100个不同的对象。<br>执行100次execute, runnable.toString()得到是同一个对象。</p>
+<p>区别点二：<br>提交到submit的runnable任务，最终执行的是FutureTask的run方法。异常被捕获。应用无法获取异常日志，所以要么用get拉取异常处理，要么自己写try catch把任务执行的逻辑包起来。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">FutureTask的run方法</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">            Callable&lt;V&gt; c = callable;</div><div class="line">            <span class="keyword">if</span> (c != <span class="keyword">null</span> &amp;&amp; state == NEW) &#123;</div><div class="line">                V result;</div><div class="line">                <span class="keyword">boolean</span> ran;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    result = c.call();</div><div class="line">                    ran = <span class="keyword">true</span>;</div><div class="line">                &#125; <span class="keyword">catch</span> (Throwable ex) &#123;</div><div class="line">                    result = <span class="keyword">null</span>;</div><div class="line">                    ran = <span class="keyword">false</span>;</div><div class="line">                    setException(ex);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (ran)</div><div class="line">                    set(result);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">用get拉取异常</div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">afterExecute</span><span class="params">(Runnable r, Throwable t)</span> </span>&#123;</div><div class="line">                <span class="keyword">super</span>.afterExecute(r, t);</div><div class="line">                <span class="keyword">if</span> (t != <span class="keyword">null</span>) &#123;</div><div class="line">                    t.printStackTrace();</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (r <span class="keyword">instanceof</span> Future&lt;?&gt;) &#123;</div><div class="line">                        <span class="keyword">try</span> &#123;</div><div class="line">                            <span class="comment">//get这里会首先检查任务的状态，然后将上面的异常包装成ExecutionException</span></div><div class="line">                            Object result = ((Future&lt;?&gt;) r).get();</div><div class="line">                        &#125; <span class="keyword">catch</span> (CancellationException ce) &#123;</div><div class="line">                            t = ce;</div><div class="line">                        &#125; <span class="keyword">catch</span> (ExecutionException ee) &#123;</div><div class="line">                            t = ee.getCause();</div><div class="line">                            t.printStackTrace();</div><div class="line">                        &#125; <span class="keyword">catch</span> (InterruptedException ie) &#123;</div><div class="line">                            Thread.currentThread().interrupt(); <span class="comment">// ignore/reset</span></div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipayimg.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatimg.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Tigase开发-Tigase服务器搭建.html" class="archive-article-date">
-  	<time datetime="2017-09-26T06:52:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Tigase开发-Tigase服务器搭建.html">Tigase开发--Tigase服务器搭建</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tigase</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">xmpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tigase服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://alonesingingstar.github.io/线程池.html" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tigase//" class="article-tag-list-link color2">tigase</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/hexo搭建博客.html" class="archive-article-date">
-  	<time datetime="2017-09-10T05:48:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/Tigase开发-Tigase服务器搭建.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Tigase开发--Tigase服务器搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/hexo搭建博客.html">hexo搭建博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程池优点："><span class="toc-number">1.</span> <span class="toc-text">线程池优点：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadPoolExecutor构造方法"><span class="toc-number">1.1.</span> <span class="toc-text">ThreadPoolExecutor构造方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自带线程池创建方式分析"><span class="toc-number">2.</span> <span class="toc-text">自带线程池创建方式分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Executors-newFixedThreadPool-int-nThreads"><span class="toc-number">2.1.</span> <span class="toc-text">Executors.newFixedThreadPool(int nThreads)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Executors-newSingleThreadPool"><span class="toc-number">2.2.</span> <span class="toc-text">Executors.newSingleThreadPool()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Executors-newCachedThreadPool"><span class="toc-number">2.3.</span> <span class="toc-text">Executors.newCachedThreadPool()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程池主要处理流程分析"><span class="toc-number">3.</span> <span class="toc-text">线程池主要处理流程分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作线程Worker分析"><span class="toc-number">4.</span> <span class="toc-text">工作线程Worker分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#submit-Runnable-runnable-与execute-Runnable-runnable"><span class="toc-number">5.</span> <span class="toc-text">submit(Runnable runnable)与execute(Runnable runnable)</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/hello-world.html" class="archive-article-date">
-  	<time datetime="2017-09-09T09:11:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/hello-world.html">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hello world</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/default//" class="article-tag-list-link color3">default</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+  <!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2144368"></script>
+<!-- UY END --> 
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -429,8 +415,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
