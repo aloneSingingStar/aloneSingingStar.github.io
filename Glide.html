@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://alonesingingstar.github.io">
   <title>Glide | aloneSiningStar的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Glide生命周期管理Glide缓存实现二级内存缓存 + LRU磁盘缓存 弱引用实现第一级实现：WeakReference + ReferenceQueueActiveResourcesMap activeEngineResources = new HashMap&amp;lt;&amp;gt;();ReferenceQueue">
+  <meta name="description" content="Glide生命周期管理">
 <meta name="keywords" content="android,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Glide">
 <meta property="og:url" content="https://alonesingingstar.github.io/Glide.html">
 <meta property="og:site_name" content="aloneSiningStar的博客">
-<meta property="og:description" content="Glide生命周期管理Glide缓存实现二级内存缓存 + LRU磁盘缓存 弱引用实现第一级实现：WeakReference + ReferenceQueueActiveResourcesMap activeEngineResources = new HashMap&amp;lt;&amp;gt;();ReferenceQueue">
+<meta property="og:description" content="Glide生命周期管理">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-06-28T14:33:08.610Z">
+<meta property="og:updated_time" content="2021-06-28T14:43:06.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Glide">
-<meta name="twitter:description" content="Glide生命周期管理Glide缓存实现二级内存缓存 + LRU磁盘缓存 弱引用实现第一级实现：WeakReference + ReferenceQueueActiveResourcesMap activeEngineResources = new HashMap&amp;lt;&amp;gt;();ReferenceQueue">
+<meta name="twitter:description" content="Glide生命周期管理">
   
     <link rel="alternative" href="/atom.xml" title="aloneSiningStar的博客" type="application/atom+xml">
   
@@ -182,7 +182,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h2 id="Glide生命周期管理"><a href="#Glide生命周期管理" class="headerlink" title="Glide生命周期管理"></a>Glide生命周期管理</h2><h2 id="Glide缓存实现"><a href="#Glide缓存实现" class="headerlink" title="Glide缓存实现"></a>Glide缓存实现</h2><p>二级内存缓存 + LRU磁盘缓存</p>
+        <h2 id="Glide生命周期管理"><a href="#Glide生命周期管理" class="headerlink" title="Glide生命周期管理"></a>Glide生命周期管理</h2><a id="more"></a>
+<h2 id="Glide缓存实现"><a href="#Glide缓存实现" class="headerlink" title="Glide缓存实现"></a>Glide缓存实现</h2><p>二级内存缓存 + LRU磁盘缓存</p>
 <h3 id="弱引用实现"><a href="#弱引用实现" class="headerlink" title="弱引用实现"></a>弱引用实现</h3><p>第一级实现：WeakReference + ReferenceQueue<br>ActiveResources<br>Map<key, resourceweakreference=""> activeEngineResources = new HashMap&lt;&gt;();<br>ReferenceQueue<engineresource<?>&gt; resourceReferenceQueue = new ReferenceQueue&lt;&gt;();</engineresource<?></key,></p>
 <p>内部启动了一个监控GC回收资源的线程，调用resourceReferenceQueue的remove方法，阻塞住，当被ResourceWeakReference持有的对象可达性发生变化(即即将被GC前)，会把对应的引用添加到resourceReferenceQueue队列，重新构建一个EngineResource对象，再次加入到LruCache中。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (!isShutdown) &#123;</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        ResourceWeakReference ref = (ResourceWeakReference) resourceReferenceQueue.remove();</div><div class="line">        cleanupActiveReference(ref);</div><div class="line"></div><div class="line">        <span class="comment">// This section for testing only.</span></div><div class="line">        DequeuedResourceCallback current = cb;</div><div class="line">        <span class="keyword">if</span> (current != <span class="keyword">null</span>) &#123;</div><div class="line">          current.onResourceDequeued();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// End for testing only.</span></div><div class="line">      &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">        Thread.currentThread().interrupt();</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">cleanupActiveReference</span><span class="params">(@NonNull ResourceWeakReference ref)</span> </span>&#123;</div><div class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</div><div class="line">      activeEngineResources.remove(ref.key);</div><div class="line"></div><div class="line">      <span class="keyword">if</span> (!ref.isCacheable || ref.resource == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    EngineResource&lt;?&gt; newResource =</div><div class="line">        <span class="keyword">new</span> EngineResource&lt;&gt;(</div><div class="line">            ref.resource, <span class="comment">/*isMemoryCacheable=*/</span> <span class="keyword">true</span>, <span class="comment">/*isRecyclable=*/</span> <span class="keyword">false</span>, ref.key, listener);</div><div class="line">    listener.onResourceReleased(ref.key, newResource);</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
 <h3 id="第二级实现：LruCache"><a href="#第二级实现：LruCache" class="headerlink" title="第二级实现：LruCache"></a>第二级实现：LruCache</h3><p>Lru背景知识<br>缓存的⼤⼩有限，当缓存被⽤满时，哪些数据应该被清理出去，哪些数据应该被保留？这就 需要缓存淘汰策略来决定。常⻅的策略有三种：先进先出策略FIFO（First In，First Out）、 最少使⽤策略LFU（Least Frequently Used）、最近最少使⽤策略LRU（Least Recently Used）。</p>
@@ -408,17 +409,6 @@ var _hmt = _hmt || [];
   </script>
 </footer>
 
-{% if theme.mermaid.enable %}
-  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/8.10.2/mermaid.min.js"></script> -->
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({theme: 'forest'});
-    }
-  </script>
-{% endif %}
-
-
     </div>
     <script>
 	var yiliaConfig = {
@@ -486,6 +476,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hello world</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tigase</a>
               </li>
              
@@ -495,10 +489,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">tigase服务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hello world</a>
               </li>
              
               <li class="article-tag-list-item">

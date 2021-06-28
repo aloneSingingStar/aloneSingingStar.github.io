@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://alonesingingstar.github.io">
   <title>AQS | aloneSiningStar的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AQS独占锁与共享锁AQS阻塞队列与条件队列AQS阻塞队列双向链表ReentrantLock AQS条件队列对应AbstractQueuedSynchronizer的内部类ConditionObject implements Condition,每一个ConditionObject对象，都会维护一个单向链表12345678Lock lock = new ReentrantLock();Condit">
+  <meta name="description" content="AQS独占锁与共享锁">
 <meta name="keywords" content="android,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AQS">
 <meta property="og:url" content="https://alonesingingstar.github.io/AQS.html">
 <meta property="og:site_name" content="aloneSiningStar的博客">
-<meta property="og:description" content="AQS独占锁与共享锁AQS阻塞队列与条件队列AQS阻塞队列双向链表ReentrantLock AQS条件队列对应AbstractQueuedSynchronizer的内部类ConditionObject implements Condition,每一个ConditionObject对象，都会维护一个单向链表12345678Lock lock = new ReentrantLock();Condit">
+<meta property="og:description" content="AQS独占锁与共享锁">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-06-28T01:50:44.503Z">
+<meta property="og:updated_time" content="2021-06-28T14:43:29.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AQS">
-<meta name="twitter:description" content="AQS独占锁与共享锁AQS阻塞队列与条件队列AQS阻塞队列双向链表ReentrantLock AQS条件队列对应AbstractQueuedSynchronizer的内部类ConditionObject implements Condition,每一个ConditionObject对象，都会维护一个单向链表12345678Lock lock = new ReentrantLock();Condit">
+<meta name="twitter:description" content="AQS独占锁与共享锁">
   
     <link rel="alternative" href="/atom.xml" title="aloneSiningStar的博客" type="application/atom+xml">
   
@@ -182,7 +182,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
 
       
-        <h2 id="AQS独占锁与共享锁"><a href="#AQS独占锁与共享锁" class="headerlink" title="AQS独占锁与共享锁"></a>AQS独占锁与共享锁</h2><h2 id="AQS阻塞队列与条件队列"><a href="#AQS阻塞队列与条件队列" class="headerlink" title="AQS阻塞队列与条件队列"></a>AQS阻塞队列与条件队列</h2><h3 id="AQS阻塞队列"><a href="#AQS阻塞队列" class="headerlink" title="AQS阻塞队列"></a>AQS阻塞队列</h3><p>双向链表<br>ReentrantLock</p>
+        <h2 id="AQS独占锁与共享锁"><a href="#AQS独占锁与共享锁" class="headerlink" title="AQS独占锁与共享锁"></a>AQS独占锁与共享锁</h2><a id="more"></a>
+<h2 id="AQS阻塞队列与条件队列"><a href="#AQS阻塞队列与条件队列" class="headerlink" title="AQS阻塞队列与条件队列"></a>AQS阻塞队列与条件队列</h2><h3 id="AQS阻塞队列"><a href="#AQS阻塞队列" class="headerlink" title="AQS阻塞队列"></a>AQS阻塞队列</h3><p>双向链表<br>ReentrantLock</p>
 <h3 id="AQS条件队列"><a href="#AQS条件队列" class="headerlink" title="AQS条件队列"></a>AQS条件队列</h3><p>对应AbstractQueuedSynchronizer的内部类ConditionObject implements Condition,每一个ConditionObject对象，都会维护一个单向链表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Lock lock = new ReentrantLock();</div><div class="line">Condition provider = lock.newCondition();</div><div class="line">Condition consumer = lock.newCondition();</div><div class="line">//此处如果获取锁失败，会调用acquireQueued(addWaiter(Node.EXCLUSIVE),arg)将当前线程以Node节点加入同步队列，自旋获取锁，没获取到则阻塞</div><div class="line">lock.lock();</div><div class="line">//能到这一步的前提是上一步已经成功获取锁，即没有加入同步队列，此处调用await()会将当前线程以Node节点加入条件队列，并且释放锁。</div><div class="line">provider.await();</div><div class="line">consumer.signalAll();</div></pre></td></tr></table></figure></p>
 <p>ReentrantReadWriteLock</p>
 
@@ -396,17 +397,6 @@ var _hmt = _hmt || [];
   </script>
 </footer>
 
-{% if theme.mermaid.enable %}
-  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/8.10.2/mermaid.min.js"></script> -->
-  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({theme: 'forest'});
-    }
-  </script>
-{% endif %}
-
-
     </div>
     <script>
 	var yiliaConfig = {
@@ -474,6 +464,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hello world</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tigase</a>
               </li>
              
@@ -483,10 +477,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">tigase服务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hello world</a>
               </li>
              
               <li class="article-tag-list-item">
