@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://alonesingingstar.github.io">
-  <title>aloneSiningStar的博客</title>
+  <title>AQS | aloneSiningStar的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="android、java技术">
+  <meta name="description" content="AQS独占锁与共享锁AQS阻塞队列与条件队列AQS阻塞队列双向链表ReentrantLock AQS条件队列对应AbstractQueuedSynchronizer的内部类ConditionObject implements Condition,每一个ConditionObject对象，都会维护一个单向链表12345678Lock lock = new ReentrantLock();Condit">
 <meta name="keywords" content="android,java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="aloneSiningStar的博客">
-<meta property="og:url" content="https://alonesingingstar.github.io/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AQS">
+<meta property="og:url" content="https://alonesingingstar.github.io/AQS.html">
 <meta property="og:site_name" content="aloneSiningStar的博客">
-<meta property="og:description" content="android、java技术">
+<meta property="og:description" content="AQS独占锁与共享锁AQS阻塞队列与条件队列AQS阻塞队列双向链表ReentrantLock AQS条件队列对应AbstractQueuedSynchronizer的内部类ConditionObject implements Condition,每一个ConditionObject对象，都会维护一个单向链表12345678Lock lock = new ReentrantLock();Condit">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-06-28T01:50:44.503Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="aloneSiningStar的博客">
-<meta name="twitter:description" content="android、java技术">
+<meta name="twitter:title" content="AQS">
+<meta name="twitter:description" content="AQS独占锁与共享锁AQS阻塞队列与条件队列AQS阻塞队列双向链表ReentrantLock AQS条件队列对应AbstractQueuedSynchronizer的内部类ConditionObject implements Condition,每一个ConditionObject对象，都会维护一个单向链表12345678Lock lock = new ReentrantLock();Condit">
   
     <link rel="alternative" href="/atom.xml" title="aloneSiningStar的博客" type="application/atom+xml">
   
@@ -160,163 +161,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-WmRouter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-AQS" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/WmRouter.html">WmRouter</a>
-    </h1>
-  
-
-        
-        <a href="/WmRouter.html" class="archive-article-date">
-  	<time datetime="2021-06-28T07:43:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-
-      
-        <h2 id="ServiceLoader"><a href="#ServiceLoader" class="headerlink" title="ServiceLoader"></a>ServiceLoader</h2><h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ul>
-<li>初始化ServiceLoader<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"> ServiceLoader.lazyInit();</div><div class="line">```</div><div class="line">* 定义接口以及实现类，并添加@RouterService注解</div><div class="line">``````JAVA</div><div class="line">public interface IEmvParamService &#123;&#125;</div><div class="line"></div><div class="line">@RouterService(interfaces = IEmvParamService.class,key = ConfigServiceConstant.CONFIGSERVICE_EMVPARAM,singleton = true)</div><div class="line">public class EmvParamService implements IEmvParamService &#123;&#125;</div><div class="line">```</div><div class="line">* 使用对应服务</div><div class="line">```java</div><div class="line">IEmvParamService service = Router.getService(IEmvParamService.class, ConfigServiceConstant.CONFIGSERVICE_EMVPARAM);</div><div class="line">```</div><div class="line">### 原理分析</div><div class="line">&lt;!-- more --&gt;</div><div class="line"></div><div class="line">1.编译期间，找到所有使用了@RouterService注解的类，使用APT技术生成初始化代码。</div><div class="line">```java</div><div class="line">package com.sankuai.waimai.router.generated.service;</div><div class="line">public class ServiceInit_9dce1d5c4961fd1e5216033e23f0dd60 &#123;</div><div class="line">  public static void init() &#123;</div><div class="line">    ServiceLoader.put(IConfigParamService.class, &quot;configService_config&quot;, ConfigParamService.class, true);</div><div class="line">    ServiceLoader.put(IAcquirerIssuerService.class, &quot;configService_acquirer_issuer&quot;, AcquirerIssuerService.class, false);</div><div class="line">    ServiceLoader.put(IEmvParamService.class, &quot;configService_emvparam&quot;, EmvParamService.class, true);</div><div class="line">    ServiceLoader.put(IModuleInit.class, &quot;init_config&quot;, ConfigInit.class, false);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">```</div><div class="line"></div><div class="line">2.应用初始化调用ServiceLoader.lazyInit()时，使用反射调用com.sankuai.waimai.router.generated.service包下的类的init方法。</div><div class="line">```java</div><div class="line">private static final LazyInitHelper sInitHelper = new LazyInitHelper(&quot;ServiceLoader&quot;) &#123;</div><div class="line">        @Override</div><div class="line">        protected void doInit() &#123;</div><div class="line">            try &#123;</div><div class="line">                // 反射调用Init类，避免引用的类过多，导致main dex capacity exceeded问题</div><div class="line">		//SERVICE_LOADER_INIT=com.sankuai.waimai.router.generated.service.ServiceLoaderInit</div><div class="line">		//INIT_METHOD = &quot;init&quot;</div><div class="line">                Class.forName(Const.SERVICE_LOADER_INIT)</div><div class="line">                        .getMethod(Const.INIT_METHOD)</div><div class="line">                        .invoke(null);</div><div class="line">                Debugger.i(&quot;[ServiceLoader] init class invoked&quot;);</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                Debugger.fatal(e);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">```</div><div class="line">3.ServiceLoader.put方法逻辑，ServiceLoader内部维护了2级HashMap，通过2级HashMap实现了如下绑定关系</div><div class="line">1.第一级HashMap绑定接口与ServiceLoader实例</div><div class="line">loader = new ServiceLoader(IEmvParamService.class);</div><div class="line">map1(IEmvParamService.class,loader)</div><div class="line">2.第二级HashMap则是由接口对应的loader实例去调用，完成key与ServiceImpl的绑定</div><div class="line">loader.putImpl(key, implementClass, singleton)</div><div class="line">map2(&quot;configService_emvparam&quot;,new ServiceImpl(&quot;configService_emvparam&quot;, EmvParamService.class, true))</div><div class="line">```java</div><div class="line">/**</div><div class="line">     * 提供给InitClass使用的初始化接口</div><div class="line">     *</div><div class="line">     * @param interfaceClass 接口类</div><div class="line">     * @param implementClass 实现类</div><div class="line">     */</div><div class="line">    public static void put(Class interfaceClass, String key, Class implementClass, boolean singleton) &#123;</div><div class="line">        ServiceLoader loader = SERVICES.get(interfaceClass);</div><div class="line">        if (loader == null) &#123;</div><div class="line">            loader = new ServiceLoader(interfaceClass);</div><div class="line">            SERVICES.put(interfaceClass, loader);</div><div class="line">        &#125;</div><div class="line">        loader.putImpl(key, implementClass, singleton);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">private void putImpl(String key, Class implementClass, boolean singleton) &#123;</div><div class="line">        if (key != null &amp;&amp; implementClass != null) &#123;</div><div class="line">            mMap.put(key, new ServiceImpl(key, implementClass, singleton));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">private static final Map&lt;Class, ServiceLoader&gt; SERVICES = new HashMap&lt;&gt;();</div><div class="line">private HashMap&lt;String, ServiceImpl&gt; mMap = new HashMap&lt;&gt;();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>4.使用Router.getService(IEmvParamService.class, ConfigServiceConstant.CONFIGSERVICE_EMVPARAM);时先通过一级HashMap获取接口对应的ServiceLoader实例，再通过二级HashMap获取接口的实现类，然后通过ServiceLoader创建实现类的实例(使用反射创建，如果是单例，还会缓存到对象池中)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;I, T extends I&gt; <span class="function">T <span class="title">getService</span><span class="params">(Class&lt;I&gt; clazz, String key)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> ServiceLoader.load(clazz).get(key);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">ServiceLoader&lt;T&gt; <span class="title">load</span><span class="params">(Class&lt;T&gt; interfaceClass)</span> </span>&#123;</div><div class="line">        sInitHelper.ensureInit();</div><div class="line">        <span class="keyword">if</span> (interfaceClass == <span class="keyword">null</span>) &#123;</div><div class="line">            Debugger.fatal(<span class="keyword">new</span> NullPointerException(<span class="string">"ServiceLoader.load的class参数不应为空"</span>));</div><div class="line">            <span class="keyword">return</span> EmptyServiceLoader.INSTANCE;</div><div class="line">        &#125;</div><div class="line">        ServiceLoader service = SERVICES.get(interfaceClass);</div><div class="line">        <span class="keyword">if</span> (service == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">synchronized</span> (SERVICES) &#123;</div><div class="line">                service = SERVICES.get(interfaceClass);</div><div class="line">                <span class="keyword">if</span> (service == <span class="keyword">null</span>) &#123;</div><div class="line">                    service = <span class="keyword">new</span> ServiceLoader(interfaceClass);</div><div class="line">                    SERVICES.put(interfaceClass, service);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> service;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">     * 创建指定key的实现类实例，使用 &#123;<span class="doctag">@link</span> RouterProvider&#125; 方法或无参数构造。对于声明了singleton的实现类，不会重复创建实例。</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span> 可能返回null</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">public</span> &lt;T extends I&gt; <span class="function">T <span class="title">get</span><span class="params">(String key)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> createInstance(mMap.get(key), <span class="keyword">null</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>5.List<iemvparamservice> allServices = Router.getAllServices(IEmvParamService.class)时，通过接口IEmvParamService.class从一级HashMap中获取对应的ServiceLoader实例,然后再遍历ServiceLoader实例中的二级HashMap的value。每一个value对应一个实例【注意，从putImpl的源码可知，虽然实现同一个接口，但是不同的实现一定要指定唯一的一个key,否则会覆盖二级HashMap中的value】<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;I, T extends I&gt; <span class="function">List&lt;T&gt; <span class="title">getAllServices</span><span class="params">(Class&lt;I&gt; clazz)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> ServiceLoader.load(clazz).getAll();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> &lt;T extends I&gt; <span class="function">List&lt;T&gt; <span class="title">getAll</span><span class="params">(IFactory factory)</span> </span>&#123;</div><div class="line">        Collection&lt;ServiceImpl&gt; services = mMap.values();</div><div class="line">        <span class="keyword">if</span> (services.isEmpty()) &#123;</div><div class="line">            <span class="keyword">return</span> Collections.emptyList();</div><div class="line">        &#125;</div><div class="line">        List&lt;T&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;(services.size());</div><div class="line">        <span class="keyword">for</span> (ServiceImpl impl : services) &#123;</div><div class="line">            T instance = createInstance(impl, factory);</div><div class="line">            <span class="keyword">if</span> (instance != <span class="keyword">null</span>) &#123;</div><div class="line">                list.add(instance);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> list;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></iemvparamservice></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/WmRouter.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Glide" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Glide.html">Glide</a>
-    </h1>
-  
-
-        
-        <a href="/Glide.html" class="archive-article-date">
-  	<time datetime="2021-06-27T08:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-
-      
-        <h2 id="Glide生命周期管理"><a href="#Glide生命周期管理" class="headerlink" title="Glide生命周期管理"></a>Glide生命周期管理</h2><h2 id="Glide缓存实现"><a href="#Glide缓存实现" class="headerlink" title="Glide缓存实现"></a>Glide缓存实现</h2><p>二级内存缓存 + LRU磁盘缓存</p>
-<h3 id="弱引用实现"><a href="#弱引用实现" class="headerlink" title="弱引用实现"></a>弱引用实现</h3><p>第一级实现：WeakReference + ReferenceQueue<br>ActiveResources<br>Map<key, resourceweakreference=""> activeEngineResources = new HashMap&lt;&gt;();<br>ReferenceQueue<engineresource<?>&gt; resourceReferenceQueue = new ReferenceQueue&lt;&gt;();</engineresource<?></key,></p>
-<p>内部启动了一个监控GC回收资源的线程，调用resourceReferenceQueue的remove方法，阻塞住，当被ResourceWeakReference持有的对象可达性发生变化(即即将被GC前)，会把对应的引用添加到resourceReferenceQueue队列，重新构建一个EngineResource对象，再次加入到LruCache中。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (!isShutdown) &#123;</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        ResourceWeakReference ref = (ResourceWeakReference) resourceReferenceQueue.remove();</div><div class="line">        cleanupActiveReference(ref);</div><div class="line"></div><div class="line">        <span class="comment">// This section for testing only.</span></div><div class="line">        DequeuedResourceCallback current = cb;</div><div class="line">        <span class="keyword">if</span> (current != <span class="keyword">null</span>) &#123;</div><div class="line">          current.onResourceDequeued();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// End for testing only.</span></div><div class="line">      &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">        Thread.currentThread().interrupt();</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">cleanupActiveReference</span><span class="params">(@NonNull ResourceWeakReference ref)</span> </span>&#123;</div><div class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</div><div class="line">      activeEngineResources.remove(ref.key);</div><div class="line"></div><div class="line">      <span class="keyword">if</span> (!ref.isCacheable || ref.resource == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    EngineResource&lt;?&gt; newResource =</div><div class="line">        <span class="keyword">new</span> EngineResource&lt;&gt;(</div><div class="line">            ref.resource, <span class="comment">/*isMemoryCacheable=*/</span> <span class="keyword">true</span>, <span class="comment">/*isRecyclable=*/</span> <span class="keyword">false</span>, ref.key, listener);</div><div class="line">    listener.onResourceReleased(ref.key, newResource);</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<h3 id="第二级实现：LruCache"><a href="#第二级实现：LruCache" class="headerlink" title="第二级实现：LruCache"></a>第二级实现：LruCache</h3><p>Lru背景知识<br>缓存的⼤⼩有限，当缓存被⽤满时，哪些数据应该被清理出去，哪些数据应该被保留？这就 需要缓存淘汰策略来决定。常⻅的策略有三种：先进先出策略FIFO（First In，First Out）、 最少使⽤策略LFU（Least Frequently Used）、最近最少使⽤策略LRU（Least Recently Used）。</p>
-<p>简单的LRU实现思路<br>维护⼀个有序单链表，越靠近链表尾部的结点是越早之前访问的。 当有⼀个新的数据被访问时，我们从链表头开始顺序遍历链表。<br>1.如果此数据之前已经被缓存在链表中了，我们遍历得到这个数据对应的结点，并将其从原来 的位置删除，然后再插⼊到链表的头部。<br>2.如果此数据没有在缓存链表中，⼜可以分为两种情况：<br>如果此时缓存未满，则将此结点直接插⼊到链表的头部；<br>如果此时缓存已满，则链表尾结点删除，将新的数据结点插⼊链表的头部。</p>
-<p>使用数组可以实现，但是无法达到O(1)；<br>使用单向链表也可以实现，但是也无法达到O(1)，因为get无法达到O(1)<br>想要get达到O(1),可以使用哈希表，但是想要将缓存命中的处于链表中间的节点移动到头部，然后将该节点前后的元素连接起来时，获取该节点前一个元素还得再遍历一遍，为解决这个问题，可以使用双向链表。</p>
-<p>LinkedHashMap已经实现LRU</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">private EngineResource&lt;?&gt; loadFromCache(Key key) &#123;</div><div class="line">    EngineResource&lt;?&gt; cached = getEngineResourceFromCache(key);</div><div class="line">    if (cached != null) &#123;</div><div class="line">      cached.acquire();</div><div class="line">      activeResources.activate(key, cached);</div><div class="line">    &#125;</div><div class="line">    return cached;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">LruResourceCache extends LruCache&lt;Key, Resource&lt;?&gt;&gt;</div><div class="line"></div><div class="line">private final Map&lt;T, Entry&lt;Y&gt;&gt; cache = new LinkedHashMap&lt;&gt;(100, 0.75f, true);</div><div class="line">//accessOrder=true表示按访问(包含put,get操作)顺便插入元素,即最后一次访问的元素放在链表最后</div><div class="line">public LinkedHashMap(int initialCapacity,</div><div class="line">                         float loadFactor,</div><div class="line">                         boolean accessOrder)</div><div class="line">举例：</div><div class="line">LinkedHashMap&lt;String,String&gt; map = new LinkedHashMap&lt;&gt;(10,0.75f,true);</div><div class="line">        map.put(&quot;a&quot;,&quot;a&quot;);</div><div class="line">        map.put(&quot;b&quot;,&quot;b&quot;);</div><div class="line">        map.put(&quot;c&quot;,&quot;c&quot;);</div><div class="line">        map.put(&quot;d&quot;,&quot;d&quot;);</div><div class="line">        String a = map.get(&quot;a&quot;);</div><div class="line">        Set&lt;Map.Entry&lt;String, String&gt;&gt; entries = map.entrySet();</div><div class="line">        for (Map.Entry&lt;String, String&gt; item : entries)&#123;</div><div class="line">            System.out.println(item.getValue());</div><div class="line">        &#125;</div><div class="line">结果：b c d a</div></pre></td></tr></table></figure>
-<h3 id="第三级实现"><a href="#第三级实现" class="headerlink" title="第三级实现"></a>第三级实现</h3><p>DiskLruCache<br>DiskLruCache的核心是journal文件，每次操作都会在journal文件中做一次记录。</p>
-<p>写入缓存的时候会向journal文件写入一条以DIRTY开头的数据表示正在进行写操作，当写入完毕时，分两种情况：1、写入成功，会向journal文件写入一条以CLEAN开头的文件，其中包括该文件的大小。 2、写入失败，会向journal文件写入一条以REMOVE开头的文件,表示删除了该条缓存。也就是说每次写入缓存总是写入两条操作记录。</p>
-<p>读取的时候，会向journal文件写入一条以READ开头的文件,表示进行了读操作</p>
-<p>删除的时候，会向journal文件写入一条以REMOVE开头的文件,表示删除了该条缓存</p>
-<p>通过journal就记录了所有对缓存的操作。并且按照从上到下的读取顺序记录了对所有缓存的操作频繁度和时间顺序。这样当退出程序再次进来调用缓存时，就可以读取这个文件来知道哪些缓存用的比较频繁了。然后把这些操作记录读取到集合中，操作的时候就可以直接从集合中去对应的数据了。</p>
-<h2 id="Glide并发管理"><a href="#Glide并发管理" class="headerlink" title="Glide并发管理"></a>Glide并发管理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> GlideExecutor.<span class="function">Builder <span class="title">newSourceBuilder</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> GlideExecutor.Builder(<span class="comment">/*preventNetworkOperations=*/</span> <span class="keyword">false</span>)</div><div class="line">        .setThreadCount(calculateBestThreadCount())</div><div class="line">        .setName(DEFAULT_SOURCE_EXECUTOR_NAME);</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//MAXIMUM_AUTOMATIC_THREAD_COUNT = 4</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">calculateBestThreadCount</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (bestThreadCount == <span class="number">0</span>) &#123;</div><div class="line">      bestThreadCount =</div><div class="line">          Math.min(MAXIMUM_AUTOMATIC_THREAD_COUNT, RuntimeCompat.availableProcessors());</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> bestThreadCount;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/** Shortcut for calling &#123;<span class="doctag">@link</span> Builder#build()&#125; on &#123;<span class="doctag">@link</span> #newSourceBuilder()&#125;. */</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> GlideExecutor <span class="title">newSourceExecutor</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> newSourceBuilder().build();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">//DEFAULT_DISK_CACHE_EXECUTOR_THREADS = 1</span></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> GlideExecutor.<span class="function">Builder <span class="title">newDiskCacheBuilder</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> GlideExecutor.Builder(<span class="comment">/*preventNetworkOperations=*/</span> <span class="keyword">true</span>)</div><div class="line">        .setThreadCount(DEFAULT_DISK_CACHE_EXECUTOR_THREADS)</div><div class="line">        .setName(DEFAULT_DISK_CACHE_EXECUTOR_NAME);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/** Shortcut for calling &#123;<span class="doctag">@link</span> Builder#build()&#125; on &#123;<span class="doctag">@link</span> #newDiskCacheBuilder()&#125;. */</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> GlideExecutor <span class="title">newDiskCacheExecutor</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> newDiskCacheBuilder().build();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> GlideExecutor.<span class="function">Builder <span class="title">newAnimationBuilder</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> bestThreadCount = calculateBestThreadCount();</div><div class="line">    <span class="comment">// We don't want to add a ton of threads running animations in parallel with our source and</span></div><div class="line">    <span class="comment">// disk cache executors. Doing so adds unnecessary CPU load and can also dramatically increase</span></div><div class="line">    <span class="comment">// our maximum memory usage. Typically one thread is sufficient here, but for higher end devices</span></div><div class="line">    <span class="comment">// with more cores, two threads can provide better performance if lots of GIFs are showing at</span></div><div class="line">    <span class="comment">// once.</span></div><div class="line">    <span class="keyword">int</span> maximumPoolSize = bestThreadCount &gt;= <span class="number">4</span> ? <span class="number">2</span> : <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> GlideExecutor.Builder(<span class="comment">/*preventNetworkOperations=*/</span> <span class="keyword">true</span>)</div><div class="line">        .setThreadCount(maximumPoolSize)</div><div class="line">        .setName(DEFAULT_ANIMATION_EXECUTOR_NAME);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">/** Shortcut for calling &#123;<span class="doctag">@link</span> Builder#build()&#125; on &#123;<span class="doctag">@link</span> #newAnimationBuilder()&#125;. */</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> GlideExecutor <span class="title">newAnimationExecutor</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> newAnimationBuilder().build();</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> GlideExecutor <span class="title">build</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">if</span> (TextUtils.isEmpty(name)) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(</div><div class="line">            <span class="string">"Name must be non-null and non-empty, but given: "</span> + name);</div><div class="line">      &#125;</div><div class="line">      <span class="comment">//corePoolSize == maximumPoolSize == setThreadCount()方法传入的值</span></div><div class="line">      ThreadPoolExecutor executor =</div><div class="line">          <span class="keyword">new</span> ThreadPoolExecutor(</div><div class="line">              corePoolSize,</div><div class="line">              maximumPoolSize,</div><div class="line">              <span class="comment">/*keepAliveTime=*/</span> threadTimeoutMillis,</div><div class="line">              TimeUnit.MILLISECONDS,</div><div class="line">              <span class="keyword">new</span> PriorityBlockingQueue&lt;Runnable&gt;(),</div><div class="line">              <span class="keyword">new</span> DefaultThreadFactory(name, uncaughtThrowableStrategy, preventNetworkOperations));</div><div class="line"></div><div class="line">      <span class="keyword">if</span> (threadTimeoutMillis != NO_THREAD_TIMEOUT) &#123;</div><div class="line">        executor.allowCoreThreadTimeOut(<span class="keyword">true</span>);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> GlideExecutor(executor);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>Glide加载缓存未命中的线程池会根据根据CPU的数量和Java虚拟机中可用的处理器数量来选择合适的线程数，但是最多不超过4;而加载缓存命中的图片的线程池默认大小为1.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Glide.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-AQS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/AQS.html">AQS</a>
+    <h1 class="article-title" itemprop="name">
+      AQS
     </h1>
   
 
@@ -337,6 +189,37 @@ var _hmt = _hmt || [];
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipayimg.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatimg.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -344,16 +227,84 @@ var _hmt = _hmt || [];
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/AQS.html">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://alonesingingstar.github.io/AQS.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/Glide.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Glide
+        
+      </div>
+    </a>
+  
+  
+    <a href="/线程池.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线程池</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -368,361 +319,37 @@ var _hmt = _hmt || [];
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-线程池" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/线程池.html">线程池</a>
-    </h1>
-  
-
-        
-        <a href="/线程池.html" class="archive-article-date">
-  	<time datetime="2021-06-16T14:18:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-
-      
-        <h2 id="线程池优点："><a href="#线程池优点：" class="headerlink" title="线程池优点："></a>线程池优点：</h2><p><strong>降低资源消耗：</strong> 通过重复利用已创建的线程降低线程<strong>创建</strong>和<strong>销毁</strong>的消耗<br><strong>提高响应速度：</strong> 当任务到达时，任务可以不需要等待线程创建就能立即执行(线程复用/线程预热prestartAllCoreThreads、prestartCoreThread)<br><strong>提高线程的可管理性：</strong> 线程是稀缺资源，如果无限制创建，不仅会消耗系统资源，还会降低系统的稳定性（线程切换的开销），使用线程池可以进行统一的分配，调优和监控。</p>
-<h3 id="ThreadPoolExecutor构造方法"><a href="#ThreadPoolExecutor构造方法" class="headerlink" title="ThreadPoolExecutor构造方法"></a>ThreadPoolExecutor构造方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">new ThreadPoolExecutor(int corePoolSize,int maximumPoolSize,long keepAliveTime,</div><div class="line">			TimeUnit unit,BlockingQueue&lt;Runnable&gt; workQueue,ThreadFactory threadFactory,</div><div class="line">			RejectedExecutionHandler handler)</div></pre></td></tr></table></figure>
-<p>corePoolSize:核心线程数大小<br>maximumPoolSize:最大线程数大小(maximumPoolSize-corePoolSize的值为非核心线程数大小)<br>keepAliveTime:非核心线程在执行完任务后，等待下一个任务的时间，超过这个时间则会销毁<br>workQueue:用来暂时保存任务的阻塞队列<br>threadFactory:用于创建工作线程的工厂，比如可以在这里给线程命名<br>handler:任务拒绝策略（线程池非RUNNING状态/阻塞队列已经满，线程池线程数量达到maximumPoolSize）</p>
-<h2 id="自带线程池创建方式分析"><a href="#自带线程池创建方式分析" class="headerlink" title="自带线程池创建方式分析"></a>自带线程池创建方式分析</h2><h3 id="Executors-newFixedThreadPool-int-nThreads"><a href="#Executors-newFixedThreadPool-int-nThreads" class="headerlink" title="Executors.newFixedThreadPool(int nThreads)"></a>Executors.newFixedThreadPool(int nThreads)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new ThreadPoolExecutor(nThreads,nThreads,0,TimeUnit.MILLISECONDS,new 					LinkedBlockingQueue&lt;Runnable&gt;())</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/线程池.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/线程池.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AQS独占锁与共享锁"><span class="toc-number">1.</span> <span class="toc-text">AQS独占锁与共享锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AQS阻塞队列与条件队列"><span class="toc-number">2.</span> <span class="toc-text">AQS阻塞队列与条件队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AQS阻塞队列"><span class="toc-number">2.1.</span> <span class="toc-text">AQS阻塞队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AQS条件队列"><span class="toc-number">2.2.</span> <span class="toc-text">AQS条件队列</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  <!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2144368"></script>
+<!-- UY END --> 
 
   
-    <article id="post-Tigase开发-Tigase服务器搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/Tigase开发-Tigase服务器搭建.html">Tigase开发--Tigase服务器搭建</a>
-    </h1>
   
 
-        
-        <a href="/Tigase开发-Tigase服务器搭建.html" class="archive-article-date">
-  	<time datetime="2017-09-26T06:52:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-
-      
-        <h3 id="1-下载安装包"><a href="#1-下载安装包" class="headerlink" title="1.下载安装包"></a>1.下载安装包</h3><p><strong>下载地址：</strong> <a href="https://projects.tigase.org/projects/tigase-server/files" target="_blank" rel="external">安装包下载地址</a></p>
-<p><strong>安装包说明：</strong> 不同后缀的安装包对应不同操作系统、或者不同的安装方式，比如tigase-server-7.1.1-b4457-javadoc.jar适用与GUI方式安装(一步步都有图像界面那种)、同样也可以用于ssh远程到服务器，控制台安装。tigase-server-7.1.1-b4457-dist-max.tar.gz适用与WEB页面方式安装等</p>
-<p><strong>安装文档说明：</strong> 一切安装步骤以官方文档为准，可以将下载好的包解压（jar包可以将.jar改为.zip，解压即可看到文档），文档目录在docs目录，比如GUI方式安装的文档路径如下：docs/Administration_Guide/html/index.html#guiinstall<br>
-        
-          <a class="article-more-a" href="/Tigase开发-Tigase服务器搭建.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tigase</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">xmpp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tigase服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tigase//" class="article-tag-list-link color2">tigase</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/Tigase开发-Tigase服务器搭建.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexo搭建博客.html">hexo搭建博客</a>
-    </h1>
   
 
-        
-        <a href="/hexo搭建博客.html" class="archive-article-date">
-  	<time datetime="2017-09-10T05:48:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-
-      
-        <h3 id="1-在github上新建项目："><a href="#1-在github上新建项目：" class="headerlink" title="1.在github上新建项目："></a>1.在github上新建项目：</h3><p><strong>项目名称：</strong>github用户名称.github.io<br>example: aloneSingingStar.github.io</p>
-<p><strong>注意:</strong>最好创建空项目，不带一个文件</p>
-<h3 id="2-本地新建目录"><a href="#2-本地新建目录" class="headerlink" title="2.本地新建目录"></a>2.本地新建目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">随意创建，我的是aloneSingingStar.github.io</div></pre></td></tr></table></figure>
-<h3 id="3-进入aloneSingingStar-github-io目录，初始化hexo"><a href="#3-进入aloneSingingStar-github-io目录，初始化hexo" class="headerlink" title="3.进入aloneSingingStar.github.io目录，初始化hexo"></a>3.进入aloneSingingStar.github.io目录，初始化hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/hexo搭建博客.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/hexo搭建博客.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hello-world.html">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/hello-world.html" class="archive-article-date">
-  	<time datetime="2017-09-09T09:11:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-        
-          <a class="article-more-a" href="/hello-world.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hello world</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/default//" class="article-tag-list-link color3">default</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/hello-world.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -784,8 +411,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
